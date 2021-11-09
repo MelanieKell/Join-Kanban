@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.bg-board {
+    display: flex;
+    background-color: rgb(244, 249, 253);
+    height: 100vh;
+    margin-left: 250px;
+}
+
+.task-area {
+    position: relative;
+    width: 300px;
+    height: 700px;
+    margin: 16px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.board-discription{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 300px;
+    background: rgb(180, 180, 238);
+    color: white;
+    font-size: larger;
+    font-weight: bolder;
+    border-radius: 8px;
+    
+}

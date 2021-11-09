@@ -8,8 +8,11 @@
     <title>JOIN</title>
 
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/sidebarcss.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="/js/sidebar.js"></script>
     <script src="script.js"></script>
+    
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,8 +22,8 @@
 
 </head>
 
-<body>
-
+<body onload="includeHTML()">
+    <div w3-include-html="sidebar.html"></div>
 
     <div class="bg-board">
         <div class="task-area">
