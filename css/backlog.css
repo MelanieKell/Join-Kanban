@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    font-family: 'PT Sans', sans-serif;
+}
+.spacer {
+    width: 175px;
+    height: 100vh;
+}
+
+.backlog {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left:200px;
+    top: 25px;
+}
+
+.title-backlog{
+    height: 5px;
+    font-size: 29px;
+
+}
+
+.title-text{
+    font-size: 14px;
+    color: rgb(22 22 165);
+    font-weight: 600;
+    padding-left: 1px;
+}
