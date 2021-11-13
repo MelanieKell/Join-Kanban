@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'PT Sans', sans-serif;
+}
+
+p {
+    padding: 10px 0px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.color {
+    color:#3634C9;
+}
+
+.div-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
+
+.text-createTask {
+    font-weight: bold;
+    background-color: #3634C9;
+    color: white; 
+    border-radius: 10px;
+    padding:10px;
+    cursor: pointer;
+}
+
+.text-cancel {
+    font-weight: bold;
+    margin-right: 10px;
+}
