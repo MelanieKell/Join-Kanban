@@ -12,6 +12,10 @@ p {
     padding: 10px 0px;
 }
 
+td {
+    padding: 5px 10px;
+}
+
 .bold {
     font-weight: bold;
 }
@@ -42,4 +46,22 @@ p {
 .text-cancel {
     font-weight: bold;
     margin-right: 10px;
+}
+
+.img-profilePicture {
+    border-radius: 100px;
+    height: 75px;
+    width: 75px;
+    object-fit: cover;
+}
+
+.img-add {
+    cursor:pointer;
+    margin:10px; 
+    height: 30px; 
+    width: 30px;
+}
+
+.img-add:hover {
+    filter: invert(0.25);
 }
