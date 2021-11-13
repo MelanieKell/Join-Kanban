@@ -12,6 +12,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="./css/addtask.css">
+    <link rel="stylesheet" href="./css/sidebarcss.css">
 
     <!-- FONT 'PT SANS' -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,9 +23,12 @@
 
     <!-- JS -->
     <script src="./js/addtask.js"></script>
+    <script src="./js/sidebar.js"></script>
 </head>
 
-<body onload="assignToMembers()" class="stop-scrolling">
+<body onload="assignToMembers(), includeHTML()" class="stop-scrolling">
+    <div w3-include-html="sidebar.html"></div>
+
     <div style="margin-left: 250px; height: 100vh; padding: 30px">
         <div style="margin: 20px 0px">
             <b style="font-size: 30px;">Add task</b><br>
@@ -34,15 +38,24 @@
             <div style="display:flex">
                 <div class="div-column color">
                     <p class="color bold">TITLE</p>
-                    <input type="text">
+                    <input required class="div-fillIns" type="text" placeholder="Please fill in...">
                     <p class="color bold">DUE DATE</p>
-                    <input type="text">
+                    <input required class="div-fillIns" type="date">
                     <p class="color bold">CATEGORY</p>
-                    <input type="text">
+                    <select class="div-fillIns" type="text" required>
+                        <option>Management</option>
+                        <option>Marketing</option>
+                        <option>Product</option>
+                        <option>Sale</option>
+                    </select>
                     <p class="color bold">URGENCY</p>
-                    <input type="text">
+                    <select class="div-fillIns" type="text" required>
+                        <option>Low</option>
+                        <option>Middle</option>
+                        <option>High</option>
+                    </select>
                     <p class="color bold">DESCRIPTION</p>
-                    <textarea style="outline:none; resize: none;" name="" id="" cols="30" rows="10"></textarea>
+                    <textarea class="div-description" placeholder="Please fill in..." id="" cols="30" rows="5"></textarea>
                 </div>
                 <div style="padding:0px 0px 0px 50px">
                     <p class="color bold">ASSIGNED TO</p>

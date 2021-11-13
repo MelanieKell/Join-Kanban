@@ -13,6 +13,9 @@ Members = [
     },
 ];
 
+/**
+ * Shows the profile picture and name of the coworker with a json array
+ */
 function assignToMembers() {
     document.getElementById('id-assignToMembers').innerHTML = ``;
 

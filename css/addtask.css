@@ -12,6 +12,10 @@ p {
     padding: 10px 0px;
 }
 
+select:not {
+    overflow: visible !important;
+}
+
 td {
     padding: 5px 10px;
 }
@@ -43,9 +47,18 @@ td {
     cursor: pointer;
 }
 
+.text-createTask:hover {
+    opacity: 0.5;
+}
+
 .text-cancel {
     font-weight: bold;
     margin-right: 10px;
+    cursor: pointer;
+}
+
+.text-cancel:hover {
+    opacity: 0.5;
 }
 
 .img-profilePicture {
@@ -64,4 +77,20 @@ td {
 
 .img-add:hover {
     filter: invert(0.25);
+}
+
+.div-fillIns {
+    border-radius: 5px;
+    border: solid rgb(160, 158, 158) 1px;
+    height: 10px;
+    padding: 10px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.div-description {
+    resize: none;
+    border-radius: 5px;
+    border: solid rgb(160, 158, 158) 1px;
+    padding: 10px;
+    font-family: 'PT Sans', sans-serif;
 }
