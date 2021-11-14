@@ -1,29 +1,84 @@
-body{
+body {
     margin: 0;
     font-family: 'PT Sans', sans-serif;
-}
-.spacer {
-    width: 175px;
-    height: 100vh;
 }
 
 .backlog {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    left:200px;
-    top: 25px;
+    margin-left: 220px;
+    left: 200px;
+    padding-top: 33px;
 }
 
-.title-backlog{
+.title-backlog {
     height: 5px;
     font-size: 29px;
-
+    margin-top: 10px;
 }
 
-.title-text{
+.title-text {
     font-size: 14px;
     color: rgb(22 22 165);
     font-weight: 600;
     padding-left: 1px;
+}
+
+.details {
+    display: flex;
+    padding-top: 25px;
+}
+
+.detail {
+    font-size: 20px;
+    font-weight: 600;
+    color: #273a94;
+}
+
+.a1 {
+    padding-right: 323px;
+}
+
+.a2 {
+    padding-right: 450px;
+}
+
+.history /* container for Historylog */ /* id */
+    {
+    width: 89vh;
+    background-color: rgba(244, 243, 251, 255);
+    height: 100px;
+    display: flex;
+    border-radius: 13px;
+    border-left: 4px solid green;
+}
+
+.member-pic {  /* Picture in Historylog */ /* id */
+  
+    
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+    margin-top: 24px;
+    margin-left: 15px;
+}
+
+.name-email { /* id */
+    padding-left: 20px;
+    width: 280px;
+}
+
+.category { /* id */
+    padding-top: 14px;
+    padding-left: 70px;
+    width: 105px;
+}
+
+.details-history{ /* id */
+    width: 520px;
+    padding-left: 73px;
+}
+
+.email {
+    color: #6b8cfc;
 }
