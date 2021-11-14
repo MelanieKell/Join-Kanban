@@ -7,13 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JoinKanban</title>
 
-    <!-- Backend for every html -->
-    <script src="./backend.js"></script>
-
     <!-- CSS -->
     <link rel="stylesheet" href="./css/addtask.css">
     <link rel="stylesheet" href="./css/sidebarcss.css">
-
     <!-- FONT 'PT SANS' -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,6 +20,8 @@
     <!-- JS -->
     <script src="./js/addtask.js"></script>
     <script src="./js/sidebar.js"></script>
+    <!-- Backend for every html -->
+    <script src="./js/backend.js"></script>
 </head>
 
 <body onload="assignToMembers(), includeHTML()" class="stop-scrolling">
@@ -50,7 +48,8 @@
                         <option>Sale</option>
                     </select>
                     <p class="color bold">URGENCY</p>
-                    <select class="div-fillIns" type="text" required>
+                    <select class="div-fillIns" required>
+                        <option hidden selected value="">Please select an urgency...</option>
                         <option>Low</option>
                         <option>Middle</option>
                         <option>High</option>
