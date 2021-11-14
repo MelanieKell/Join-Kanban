@@ -45,7 +45,7 @@ body {
 
 .history /* container for Historylog */ /* id */
     {
-    width: 89vh;
+    width: 69rem;
     background-color: rgba(244, 243, 251, 255);
     height: 100px;
     display: flex;
