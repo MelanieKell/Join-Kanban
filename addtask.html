@@ -22,11 +22,12 @@
     <!-- JS -->
     <script src="./js/addtask.js"></script>
     <script src="./js/sidebar.js"></script>
-    <!-- Backend for every html -->
-    <script src="./js/backend.js"></script>
+    <!-- Backend -->
+    <script src="./js/mini_backend.js"></script>
+    <script src="./js/script.js"></script>
 </head>
 
-<body onload="assignToMembers(), includeHTML()" class="stop-scrolling">
+<body onload="init(), assignToMembers(), includeHTML()" class="stop-scrolling">
     <div w3-include-html="sidebar.html"></div>
 
     <div style="margin-left: 250px; height: 100vh; padding: 30px">
@@ -35,42 +36,44 @@
             <p class="color bold">Learning Management System Project</p> 
         </div>
         <div style="background-color: #EBEDFC; width: 50%;padding:10px 20px;border-radius: 10px;">
-            <div style="display:flex">
-                <div class="div-column color">
-                    <p class="color bold">TITLE</p>
-                    <input required class="div-fillIns" type="text" placeholder="Please fill in...">
-                    <p class="color bold">DUE DATE</p>
-                    <input required class="div-fillIns" type="date">
-                    <p class="color bold">CATEGORY</p>
-                    <select class="div-fillIns" required>
-                        <option hidden selected value="">Please select a category...</option> <!-- no hight in css -->
-                        <option>Management</option>
-                        <option>Marketing</option>
-                        <option>Product</option>
-                        <option>Sale</option>
-                    </select>
-                    <p class="color bold">URGENCY</p>
-                    <select class="div-fillIns" required>
-                        <option hidden selected value="">Please select an urgency...</option>
-                        <option>Low</option>
-                        <option>Middle</option>
-                        <option>High</option>
-                    </select>
-                    <p class="color bold">DESCRIPTION</p>
-                    <textarea class="div-description" placeholder="Please fill in..." id="" cols="30" rows="5"></textarea>
+            <form onsubmit="createTask(); return false;"> <!-- when no "return false" the page refreshes after confirming the alert "Please select an assigne!" -->
+                <div style="display:flex">
+                    <div class="div-column color">
+                        <p class="color bold">TITLE</p>
+                        <input id="id-title" required class="div-fillIns" type="text" placeholder="Please fill in...">
+                        <p class="color bold">DUE DATE</p>
+                        <input id="id-date" required class="div-fillIns" type="date">
+                        <p class="color bold">CATEGORY</p>
+                        <select id="id-category" class="div-fillIns" required>
+                            <option hidden selected value="">Please select a category...</option> <!-- no hight in css -->
+                            <option>Management</option>
+                            <option>Marketing</option>
+                            <option>Product</option>
+                            <option>Sale</option>
+                        </select>
+                        <p class="color bold">URGENCY</p>
+                        <select id="id-urgency" class="div-fillIns" required>
+                            <option hidden selected value="">Please select an urgency...</option>
+                            <option>Low</option>
+                            <option>Middle</option>
+                            <option>High</option>
+                        </select>
+                        <p class="color bold">DESCRIPTION</p>
+                        <textarea required id="id-description" class="div-description" placeholder="Please fill in..." cols="30" rows="5"></textarea>
+                        <div style="display: flex; align-items: center; margin: 20px 0px 10px 0px">
+                            <p class="text-cancel color">CANCEL</p>
+                            <button type="submit" id="id-createTask" class="text-createTask">CREATE TASK</button>
+                        </div>
+                    </div>
+                    <div style="padding:0px 0px 0px 50px">
+                        <p class="color bold">ASSIGNED TO</p>
+                        <table class="div-column">
+                            <tbody id="id-assignment">
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div style="padding:0px 0px 0px 50px">
-                    <p class="color bold">ASSIGNED TO</p>
-                    <table class="div-column">
-                        <tbody id="id-assignToMembers">
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div style="display: flex; align-items: center; margin: 20px 0px 10px 0px">
-                <p class="text-cancel color">CANCEL</p>
-                <p class="text-createTask">CREATE TASK</p>
-            </div>
+            </form>
         </div>
     </div>
 </body>
