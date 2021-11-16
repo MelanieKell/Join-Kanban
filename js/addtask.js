@@ -16,6 +16,16 @@ Members = [
 let selectedMembers = [];
 
 /**
+ * Fires the functions when side loads
+ */
+async function init() {
+    await downloadFromServer();
+    loadAllTasks();
+    includeHTML();
+    assignToMembers();
+}
+
+/**
  * Shows the profile picture and name of the coworker with a json array
  */
 function assignToMembers() {
@@ -63,6 +73,7 @@ async function createTask() {
         let category = document.getElementById('id-category').value;
         let urgency = document.getElementById('id-urgency').value;
         let description = document.getElementById('id-description').value;
+        let assignment = selectedMembers;
     
         let task = {
             'title': title,
@@ -70,6 +81,7 @@ async function createTask() {
             'category': category,
             'urgency': urgency,
             'description': description,
+            'assignment': assignment
         };
     
         allTasks.push(task);
@@ -84,11 +96,12 @@ async function createTask() {
 /**
  * Clears all input fields
  */
-function deleteInformation() {
+function deleteInformation(i) {
     document.getElementById('id-title').value = '';
     document.getElementById('id-date').value = '';
     document.getElementById('id-category').value = '';
     document.getElementById('id-urgency').value = '';
     document.getElementById('id-description').value = '';
-    document.getElementById('id-assignment').value = '';
+
+    document.getElementById('id-add' + i).src = "img/remove.png";
 }
