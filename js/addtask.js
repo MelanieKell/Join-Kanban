@@ -38,7 +38,7 @@ function assignToMembers() {
             <tr>
                 <td><img class="img-profilePicture" src="${Member['img']}"></td>
                 <td>${Member['name']}</td>
-                <td><img onclick="select(${i})" id="id-add${i}" class="img-add" src="img/add.png"></td>
+                <td><img onclick="select(${i})" id="id-add${i}" class="img-add" src="img/plus.png"></td>
             </tr>
         `;
     }
@@ -52,10 +52,10 @@ function select(i) {
     let position = selectedMembers.indexOf(Members[i]);
     if (noMemberSelected(position)) {
         selectedMembers.push(Members[i]);
-        document.getElementById('id-add' + i).src = "img/remove.png";
+        document.getElementById('id-add' + i).src = "img/minus.png";
     } else {
         selectedMembers.splice(position, 1);
-        document.getElementById('id-add' + i).src = "img/add.png";
+        document.getElementById('id-add' + i).src = "img/plus.png";
     }
 }
 
@@ -96,12 +96,13 @@ async function createTask() {
 /**
  * Clears all input fields
  */
-function deleteInformation(i) {
+function deleteInformation() {
     document.getElementById('id-title').value = '';
     document.getElementById('id-date').value = '';
     document.getElementById('id-category').value = '';
     document.getElementById('id-urgency').value = '';
     document.getElementById('id-description').value = '';
 
-    document.getElementById('id-add' + i).src = "img/remove.png";
+    selectedMembers = [];
+    assignToMembers();
 }
