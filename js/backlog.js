@@ -15,10 +15,10 @@
 
 
 
-function loadTasks() {
+function showTasks() {
     let taskRow = document.getElementById('taskRow');
     taskRow.innerHTML = '';
-    for (let i = 0; i < allTasks.length; i++) {
+    for (let i = 0; i < loadAllTasks.length; i++) {
 
         console.log('showsomething');
 
