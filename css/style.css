@@ -38,6 +38,14 @@ body {
     
 }
 
+.task-board{
+    height: 250px;
+    width: 250px;
+    background-color: white;
+    margin-top: 5px;
+    text-align: center;
+}
+
 
 /* from here: style tab "help" */
 
@@ -85,10 +93,5 @@ body {
     align-items: center;
 }
 
-.test{
-    height: 50px;
-    width: 150px;
-    background-color: white;
-    margin-top: 5px;
-    text-align: center;
-}
+
+
