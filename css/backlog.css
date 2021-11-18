@@ -51,6 +51,8 @@ body {
     display: flex;
     border-radius: 13px;
     border-left: 4px solid green;
+    margin-bottom: 15px;
+    overflow: hidden;
 }
 
 .member-pic {  /* Picture in Historylog */ /* id */
