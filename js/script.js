@@ -1,4 +1,5 @@
 let allTasks = [];
+let allLoggedUser = [];
 
 setURL('http://gruppe-126.developerakademie.net/smallest_backend_ever');
 

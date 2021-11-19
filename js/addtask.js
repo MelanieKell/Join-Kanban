@@ -82,7 +82,7 @@ async function createTask() {
             'urgency': urgency,
             'description': description,
             'assignment': assignment
-        };
+        }
     
         allTasks.push(task);
         await saveToBackend();
