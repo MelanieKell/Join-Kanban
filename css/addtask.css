@@ -90,3 +90,32 @@ td {
     padding: 10px;
     font-family: 'PT Sans', sans-serif;
 }
+
+.div-background {
+    background-color: #EBEDFC; 
+    padding:10px 20px;
+    border-radius: 10px;
+}
+
+.div-flex {
+    display:flex;
+}
+
+.div-padding {
+    padding:0px 0px 0px 50px;
+}
+
+@media (max-width: 908px) {
+    .div-flex {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .stop-scrolling {
+        overflow: visible;
+    }
+
+    .div-padding {
+        padding:0px 0px 0px 0px;
+    }
+}
