@@ -86,8 +86,8 @@ async function createTask() {
         };
     
         allTasks.push(task);
-        alert('Task added!');
         await saveToBackend();
+        alert('Task added!');
         deleteInformation(); 
     } else {
         alert("Please select an assigne!");
