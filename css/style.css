@@ -46,6 +46,19 @@ body {
     text-align: center;
 }
 
+.testTask{
+    height: 250px;
+    width: 250px;
+    background-color: white;
+    margin-top: 5px;
+    text-align: center;
+
+}
+
+.drag-highlight{
+    background-color:rgba(0, 0, 0, 0.2); ;
+}
+
 
 /* from here: style tab "help" */
 
