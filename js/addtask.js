@@ -1,15 +1,18 @@
 Members = [
     {
         img: 'img/Profilepicture1.PNG',
-        name: 'Melanie Kell'
+        name: 'Melanie Kell',
+        email: 'Melanie@gmail.com'
     },
     {
         img: 'img/Profilepicture2.PNG',
-        name: 'Mario Neubacher'
+        name: 'Mario Neubacher',
+        email: 'Mario@gmail.com'
     },
     {
         img: 'img/Profilepicture3.PNG',
-        name: 'Bünyamin Altan'
+        name: 'Bünyamin Altan',
+        email: 'Bünyamin@gmail.com'
     },
 ];
 
