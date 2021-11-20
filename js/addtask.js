@@ -81,12 +81,13 @@ async function createTask() {
             'category': category,
             'urgency': urgency,
             'description': description,
-            'assignment': assignment
+            'assignment': assignment,
+            'board': todo
         };
     
         allTasks.push(task);
-        alert('Task added!');
         await saveToBackend();
+        alert('Task added!');
         deleteInformation(); 
     } else {
         alert("Please select an assigne!");

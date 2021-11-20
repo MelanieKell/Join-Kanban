@@ -24,21 +24,21 @@
     <script src="./js/sidebar.js"></script>
     <!-- Backend -->
     <script src="./js/mini_backend.js"></script>
-    <script src="./js/script.js"></script>
+    <script src="./js/script.js"></script> <!-- extra file for clarity -->
 </head>
 
 <body onload="init()" class="stop-scrolling">
     <div w3-include-html="sidebar.html"></div>
 
-    <div style="margin-left: 250px; height: 100vh; padding: 30px">
+    <div style="margin-left: 200px; height: 100vh; padding: 30px">
         <div style="margin: 20px 0px">
             <b style="font-size: 30px;">Add task</b><br>
             <p class="color bold">Learning Management System Project</p> 
         </div>
-        <div style="background-color: #EBEDFC; width: 50%;padding:10px 20px;border-radius: 10px;">
+        <div class="div-background">
             <form onsubmit="createTask(); return false;"> <!-- when no "return false" the page refreshes after confirming the alert "Please select an assigne!" -->
-                <div style="display:flex">
-                    <div class="div-column color">
+                <div class="div-flex">
+                    <div class="div-column color div-flex">
                         <p class="color bold">TITLE</p>
                         <input id="id-title" required class="div-fillIns" type="text" placeholder="Please fill in...">
                         <p class="color bold">DUE DATE</p>
@@ -60,18 +60,18 @@
                         </select>
                         <p class="color bold">DESCRIPTION</p>
                         <textarea required id="id-description" class="div-description" placeholder="Please fill in..." cols="30" rows="5"></textarea>
-                        <div style="display: flex; align-items: center; margin: 20px 0px 10px 0px">
-                            <p class="text-cancel color">CANCEL</p>
-                            <button type="submit" id="id-createTask" class="text-createTask">CREATE TASK</button>
-                        </div>
                     </div>
-                    <div style="padding:0px 0px 0px 50px">
+                    <div class="div-padding">
                         <p class="color bold">ASSIGNED TO</p>
                         <table class="div-column">
                             <tbody id="id-assignment">
                             </tbody>
                         </table>
                     </div>
+                </div>
+                <div style="display: flex; align-items: center; margin: 20px 0px 10px 0px">
+                    <p class="text-cancel color">CANCEL</p>
+                    <button type="submit" id="id-createTask" class="text-createTask">CREATE TASK</button>
                 </div>
             </form>
         </div>
