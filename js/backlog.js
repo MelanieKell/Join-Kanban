@@ -1,36 +1,13 @@
 /**
  * Fires the functions when side loads
  */
- async function init() {
+async function init() {
     await downloadFromServer();
     loadAllTasks();
     includeHTML();
     showTasks();
-    showMemberPicture()
+
 }
-
-
-
-Members = [
-    {
-        img: 'img/Profilepicture1.PNG',
-        name: 'Melanie Kell',
-        email: 'Melanie@gmail.com'
-    },
-    {
-        img: 'img/Profilepicture2.PNG',
-        name: 'Mario Neubacher',
-        email: 'Mario@gmail.com'
-    },
-    {
-        img: 'img/Profilepicture3.PNG',
-        name: 'Bünyamin Altan',
-        email: 'Bünyamin@gmail.com'
-    },
-];
-
-
-
 function showTasks() {
     let taskRow = document.getElementById('taskRow');
     taskRow.innerHTML = '';
@@ -39,30 +16,42 @@ function showTasks() {
         console.log('showsomething');
 
         taskRow.innerHTML += `
-        <div class="history">
-            <img class="member-pic" src=${Members.img}>
+            <div class="history">
 
-            <div class="name-email">
-                <p>${Members[0]['name']}</p>
-                <p class="email">${Members[0]['email']}</p>
+                <div class="members-list" id="members-list${i}">
+
             </div>
 
             <div class="category">
+
                 <p class="category1">${allTasks[i].category}</p>
+
             </div>
 
             <div class="details-history">
+ 
                 <p>${allTasks[i].description}</p>
+
             </div>
+
         </div>
         `;
-
+        showMembers(i);
     }
 }
 
+function showMembers(taskIndex) {
+    document.getElementById("members-list" + taskIndex).innerHTML = "";
+    for (let i = 0; i < allTasks[taskIndex].assignment.length; i++) {
+        document.getElementById("members-list" + taskIndex).innerHTML += `
+            <img class="member-pic" src="${allTasks[taskIndex].assignment[i].img}">
+            <div class="user-data">
+            <p class="name-email">${allTasks[taskIndex].assignment[i].name}</p>
+            <p class="email">${allTasks[taskIndex].assignment[i].email}
+            </div>
+          
+        `;
 
-function showMemberPicture() {
-for (let MemberInfo = 0; MemberInfo < Members.length; MemberInfo++) {
-    const element = array[MemberInfo];
-    
-}}
+
+    }
+}
