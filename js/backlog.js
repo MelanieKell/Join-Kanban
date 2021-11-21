@@ -8,6 +8,11 @@ async function init() {
     showTasks();
 
 }
+
+/**
+ * This function  shows the added tasks 
+ * @param {string} name - this 
+ */
 function showTasks() {
     let taskRow = document.getElementById('taskRow');
     taskRow.innerHTML = '';
@@ -39,7 +44,10 @@ function showTasks() {
         showMembers(i);
     }
 }
-
+/**
+ * This function shows the user picture name and email
+ * @param {*} taskIndex 
+ */
 function showMembers(taskIndex) {
     document.getElementById("members-list" + taskIndex).innerHTML = "";
     for (let i = 0; i < allTasks[taskIndex].assignment.length; i++) {
