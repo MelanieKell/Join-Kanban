@@ -33,6 +33,7 @@ async function signInBackend() {
         'password': password
     }
 
+    Members.push(signedUser);
     allSignedUser.push(signedUser);
     await saveToBackendSignUps();
     window.location.href = "./board.html";

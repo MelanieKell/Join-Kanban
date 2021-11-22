@@ -7,12 +7,7 @@ async function init() {
     loadAllTasks();
     includeHTML();
     updateHTML();
-
-
 }
-
-
-
 
 /* funktioniert noch nicht!!!!!! 
 
