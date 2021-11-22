@@ -85,7 +85,7 @@ async function createTask() {
             'urgency': urgency,
             'description': description,
             'assignment': assignment,
-            'board': todo
+            'board': 'todo'
         };
     
         allTasks.push(task);

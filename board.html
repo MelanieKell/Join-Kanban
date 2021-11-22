@@ -21,7 +21,7 @@
 
     <!-- JS -->
     <script src="./js/sidebar.js"></script>
-    <script src="./js/index.js"></script>
+    <script src="./js/board.js"></script>
     <!-- Backend -->
     <script src="./js/mini_backend.js"></script>
     <script src="./js/script.js"></script>
@@ -33,12 +33,10 @@
 
     <div class="bg-board">
         <div class="task-area">
-            <div id="boardColumn"class="board-discription">
+            <div id="boardColumnToDo"class="board-discription">
                 To do
             </div>
 
-            <div class="testTask" id="open" ondrop="moveTo('open')" ondragleave="removeHighlight('open')" ondragover="allowDrop(event); highlight('open')"></div>
-            <div class="testTask" id="closed" ondrop="moveTo('closed')" ondragleave="removeHighlight('closed')" ondragover="allowDrop(event); highlight('closed')"></div>
         </div>
 
         <div class="task-area">
@@ -67,5 +65,7 @@
 
 
 </body>
+
+
 
 </html>
