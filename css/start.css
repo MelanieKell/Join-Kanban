@@ -36,15 +36,14 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
 }
 
 .div-login {
     cursor:pointer;
-    width: 110%;
+    width:75%; 
     text-align:center; 
     padding: 10px; 
-    margin: 20px;
+    margin: 20px 0px;
     background-color: white; 
     font-weight: bold; 
     color: grey; 
@@ -68,4 +67,5 @@ input {
     padding: 10px;
     text-decoration: underline;
     cursor: pointer;
+    text-align: center;
 }

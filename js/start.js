@@ -1,3 +1,13 @@
+function signIn() {
+    document.getElementById('id-formLogin').classList.add('d-none');
+    document.getElementById('id-formSignIn').classList.remove('d-none');
+}
+
+function backToLogin() {
+    document.getElementById('id-formLogin').classList.remove('d-none');
+    document.getElementById('id-formSignIn').classList.add('d-none');
+}
+
 async function login() {
     let email = document.getElementById('id-email').value; 
     let password = document.getElementById('id-password').value; 
@@ -8,21 +18,22 @@ async function login() {
     }
 
     allLoggedUser.push(loggedUser);
-    console.log('User logged in');
-    await saveToBackend();
+    await saveToBackendLogins();
     window.location.href = "./board.html";
 }
 
-function signIn() {
-    document.getElementById('id-name').classList.remove('d-none');
-    document.getElementById('id-loginAsGuest').classList.add('d-none');
-    document.getElementById('id-signIn').classList.add('d-none');
-    document.getElementById('id-backToLogin').classList.remove('d-none');
-}
+async function signInBackend() {
+    let name = document.getElementById('id-name').value; 
+    let email = document.getElementById('id-email1').value; 
+    let password = document.getElementById('id-password1').value; 
 
-function backToLogin() {
-    document.getElementById('id-name').classList.add('d-none');
-    document.getElementById('id-loginAsGuest').classList.remove('d-none');
-    document.getElementById('id-signIn').classList.remove('d-none');
-    document.getElementById('id-backToLogin').classList.add('d-none');
+    let signedUser = {
+        'name': name,
+        'email': email,
+        'password': password
+    }
+
+    allSignedUser.push(signedUser);
+    await saveToBackendSignUps();
+    window.location.href = "./board.html";
 }
