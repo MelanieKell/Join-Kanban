@@ -89,7 +89,7 @@ async function createTask() {
         };
     
         allTasks.push(task);
-        await saveToBackend();
+        await saveToBackendTasks();
         alert('Task added!');
         deleteInformation(); 
     } else {
