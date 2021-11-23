@@ -1,4 +1,4 @@
-/**
+
 /**
  * Fires the functions when side loads
  */
@@ -9,58 +9,25 @@ async function init() {
     updateHTML();
 }
 
-/* funktioniert noch nicht!!!!!! 
-
-function renderTasks() {
-
-    for (let i = 0; i < todos.length; i++) {
-        document.getElementById('boardColumn').innerHTML += ` 
-
-    <div class="task-board"> 
-        <div><b>${todos[i].title}</b></div>
-        <div>${todos[i].date}</div>
-        <div>${todos[i].category}</div>
-    </div>`;
-    }
-
-
-}
-*/
-
-/* später dann das Array für the tasks from the backend */
-
-let todos = [{
-    'id': 0,
-    'title': 'test0',
-    'catergory': 'open'
-},
-{
-    'id': 1,
-    'title': 'test1',
-    'catergory': 'open'
-},
-{
-    'id': 2,
-    'title': 'test2',
-    'catergory': 'closed'
-},
-
-];
 
 let currentDraggedElement;
 
 function updateHTML() {
-    let open = todos.filter(t => t['catergory'] == 'open');
-    document.getElementById('open').innerHTML = '';
+    let open = allTasks.filter(t => t['board'] == 'todo');
+    document.getElementById('boardColumnToDo').innerHTML = '';
 
-    for (let i = 0; i < open.length; i++) {
-        const element = open[i];
-        document.getElementById('open').innerHTML += generateTodoHTML(element);
-
+    for (let i = 0; i < allTasks.length; i++) {
+        const element = allTasks[i];
+        document.getElementById('boardColumnToDo').innerHTML += 
+            `<div class="task-board"> 
+            <div><b>${allTasks[i].title}</b></div>
+            <div>${allTasks[i].date}</div>
+            <div>${allTasks[i].assignment}</div>
+            </div>`;
     }
 
-    let closed = todos.filter(t => t['catergory'] == 'closed');
-    document.getElementById('closed').innerHTML = '';
+    let closed = allTasks.filter(t => t['board'] == 'inprogress');
+    document.getElementById('inprogress').innerHTML = '';
 
     for (let i = 0; i < closed.length; i++) {
         const element = closed[i];
@@ -75,26 +42,26 @@ function startDragging(id) {
 
 }
 
-
+/*  not needed 
 function generateTodoHTML(element) {
     return `<div draggable="true" ondragstart="startDragging(${element['id']})"class="testTask">${element['title']}<div>`
-}
+}*/
 
 function allowDrop(ev) {
     ev.preventDefault();
 }
 
-function moveTo(category) {
-    todos[currentDraggedElement]['catergory'] = category;
+function moveTo(board) {
+    todos[currentDraggedElement]['board'] = board;
     updateHTML();
 }
 
-function highlight(id){
+function highlight(id) {
     document.getElementById(id).classList.add('drag-highlight');
 
 }
 
-function removehighlight(id){
+function removehighlight(id) {
     document.getElementById(id).classList.remove('drag-highlight');
 
 }

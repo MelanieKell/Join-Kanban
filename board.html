@@ -33,30 +33,32 @@
 
     <div class="bg-board">
         <div class="task-area">
-            <div id="boardColumn"class="board-discription">
+            <div class="board-discription">
                 To do
             </div>
 
-            <div class="testTask" id="open" ondrop="moveTo('open')" ondragleave="removeHighlight('open')" ondragover="allowDrop(event); highlight('open')"></div>
-            <div class="testTask" id="closed" ondrop="moveTo('closed')" ondragleave="removeHighlight('closed')" ondragover="allowDrop(event); highlight('closed')"></div>
+            <div id="boardColumnToDo" draggable="true" ondragstart="startDragging()" class="testTask"></div>
+
+           
+
         </div>
 
         <div class="task-area">
-            <div class="board-discription">
+            <div id="boardColumnInProgress" class="board-discription">
                 In Progress
             </div>
 
         </div>
 
         <div class="task-area">
-            <div class="board-discription">
+            <div id="boardColumnCodeReview" class="board-discription">
                 Code Review
             </div>
 
         </div>
 
         <div class="task-area">
-            <div class="board-discription">
+            <div id="boardColumnDone" class="board-discription">
                 Done
             </div>
 
@@ -67,5 +69,7 @@
 
 
 </body>
+
+
 
 </html>
