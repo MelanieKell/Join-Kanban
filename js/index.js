@@ -1,3 +1,8 @@
+async function init() {
+    await downloadFromServer(); 
+    loadAllSignIns();
+}
+
 function signIn() {
     document.getElementById('id-formLogin').classList.add('d-none');
     document.getElementById('id-formSignIn').classList.remove('d-none');
@@ -19,7 +24,7 @@ async function login() {
 
     allLoggedUser.push(loggedUser);
     await saveToBackendLogins();
-    window.location.href = "./board.html";
+    window.location.href = "./addtask.html";
 }
 
 async function signInBackend() {
@@ -28,13 +33,13 @@ async function signInBackend() {
     let password = document.getElementById('id-password1').value; 
 
     let signedUser = {
+        'img': 'img/contact.png',
         'name': name,
-        'email': email,
-        'password': password
+        'email': email
     }
 
-    Members.push(signedUser);
     allSignedUser.push(signedUser);
     await saveToBackendSignUps();
-    window.location.href = "./board.html";
+    console.log('saved to Backend');
+    window.location.href = "./addtask.html";
 }

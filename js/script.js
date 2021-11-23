@@ -24,9 +24,9 @@ function loadAllTasks() {
 }
 
 function loadAllLogins() {
-    allTasks = JSON.parse(backend.getItem('allLoggedUser')) || [];
+    allLoggedUser = JSON.parse(backend.getItem('allLoggedUser')) || [];
 }
 
 function loadAllSignIns() {
-    allTasks = JSON.parse(backend.getItem('allSignedUser')) || [];
+    allSignedUser = JSON.parse(backend.getItem('allSignedUser')) || [];
 }

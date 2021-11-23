@@ -1,21 +1,3 @@
-Members = [
-    {
-        img: 'img/Profilepicture1.PNG',
-        name: 'Melanie Kell',
-        email: 'Melanie@gmail.com'
-    },
-    {
-        img: 'img/Profilepicture2.PNG',
-        name: 'Mario Neubacher',
-        email: 'Mario@gmail.com'
-    },
-    {
-        img: 'img/Profilepicture3.PNG',
-        name: 'Bünyamin Altan',
-        email: 'Bünyamin@gmail.com'
-    },
-];
-
 let selectedMembers = [];
 
 /**
@@ -23,7 +5,7 @@ let selectedMembers = [];
  */
 async function init() {
     await downloadFromServer();
-    loadAllTasks();
+    loadAllSignIns(); /* has to load before assignToMembers() */
     includeHTML();
     assignToMembers();
 }
@@ -34,8 +16,8 @@ async function init() {
 function assignToMembers() {
     document.getElementById('id-assignment').innerHTML = ``;
 
-    for (let i = 0; i < Members.length; i++) {
-        let Member = Members[i];
+    for (let i = 0; i < allSignedUser.length; i++) {
+        let Member = allSignedUser[i];
 
         document.getElementById('id-assignment').innerHTML += `
             <tr>
@@ -52,9 +34,9 @@ function assignToMembers() {
  * @param {number} i - filters which user was selected
  */
 function select(i) {
-    let position = selectedMembers.indexOf(Members[i]);
+    let position = selectedMembers.indexOf(allSignedUser[i]);
     if (noMemberSelected(position)) {
-        selectedMembers.push(Members[i]);
+        selectedMembers.push(allSignedUser[i]);
         document.getElementById('id-add' + i).src = "img/minus.png";
     } else {
         selectedMembers.splice(position, 1);
