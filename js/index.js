@@ -15,16 +15,13 @@ function backToLogin() {
 
 async function login() {
     let email = document.getElementById('id-email').value; 
-    let password = document.getElementById('id-password').value; 
+    let password = document.getElementById('id-password').value;   
 
-    let loggedUser = {
-        'email': email,
-        'password': password
+    if (condition) {
+        window.location.href = "./addtask.html";
+    } else {
+        alert('Email or password is wrong')
     }
-
-    allLoggedUser.push(loggedUser);
-    await saveToBackendLogins();
-    window.location.href = "./addtask.html";
 }
 
 async function signInBackend() {
