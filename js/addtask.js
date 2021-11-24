@@ -1,8 +1,5 @@
 let selectedMembers = [];
 
-/**
- * Fires the functions when side loads
- */
 async function init() {
     await downloadFromServer();
     loadAllSignIns(); /* has to load before assignToMembers() */
@@ -11,10 +8,10 @@ async function init() {
 }
 
 /**
- * Shows the profile picture and name of the coworker with a json array
+ * For loop which shows the profile picture and username from the array "allSignedUser" plus an select and delete button
  */
 function assignToMembers() {
-    document.getElementById('id-assignment').innerHTML = ``;
+    document.getElementById('id-assignment').innerHTML = ``; //necessary otherwise too much gets added
 
     for (let i = 0; i < allSignedUser.length; i++) {
         let Member = allSignedUser[i];
@@ -30,6 +27,10 @@ function assignToMembers() {
     }
 }
 
+/**
+ * Deletes user from array "allSignedUser", saves the backend adjustment and loads assignToMembers() to show changes
+ * @param {Number} i - Which one was selected
+ */
 function deleteUser(i) {
     allSignedUser.splice(i, 1);
     saveToBackendSignUps();
@@ -37,7 +38,7 @@ function deleteUser(i) {
 }
 
 /**
- * Alters the selectedMembers array and replaces the plus with a minus by selection
+ * Alters the array "selectedMembers" and replaces the plus with a minus by selection
  * @param {number} i - filters which user was selected
  */
 function select(i) {
@@ -56,7 +57,7 @@ function noMemberSelected(position) {
 }
 
 /**
- * Adds the infos to board and backlog
+ * Pushes the task data to the array "allTasks", saves it to backend, gives an success alert and clears input fields or gives missing alert 
  */
 async function createTask() {
     if (selectedMembers.length != 0) {
@@ -87,7 +88,7 @@ async function createTask() {
 }
 
 /**
- * Clears all input fields
+ * Clears all input fields and load assignToMembers to show changes
  */
 function deleteInformation() {
     document.getElementById('id-title').value = '';
