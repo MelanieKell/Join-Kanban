@@ -75,7 +75,8 @@ async function createTask() {
             'urgency': urgency,
             'description': description,
             'assignment': assignment,
-            'board': 'todo'
+            'board': 'todo',
+            'id' : new Date().getTime()
         };
     
         allTasks.push(task);
