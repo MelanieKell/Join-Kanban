@@ -16,8 +16,9 @@ function backToLogin() {
 async function login() {
     let email = document.getElementById('id-email').value; 
     let password = document.getElementById('id-password').value;   
+    let found = allSignedUser.find(u => u.email === email && u.password === password);
 
-    if (condition) {
+    if (found) {
         window.location.href = "./addtask.html";
     } else {
         alert('Email or password is wrong')
@@ -32,7 +33,8 @@ async function signInBackend() {
     let signedUser = {
         'img': 'img/contact.png',
         'name': name,
-        'email': email
+        'email': email,
+        'password': password
     }
 
     allSignedUser.push(signedUser);
