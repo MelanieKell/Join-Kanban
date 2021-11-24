@@ -18,6 +18,19 @@ function setID() {
     }
 }
 
+async function deleteTask(id) {
+    let task = allTasks.find(t => t.id === id);
+    let pos = allTasks.indexOf(task);
+    allTasks.splice(pos, 1)
+    await saveToBackendTasks();
+    updateHTML();
+    
+}
+
+
+
+
+
 /* generates task in board in the respectively column */
 
 function updateHTML() {
@@ -28,9 +41,10 @@ function updateHTML() {
         const element = allTasks[i];
         document.getElementById('boardColumnToDo').innerHTML += 
             `<div id="${i}" class="task-board"> 
-            <div><b>${allTasks[i].title}</b></div>
-            <div>${allTasks[i].date}</div>
-            <div>${allTasks[i].assignment[0].name}</div>
+            <div><b>${todo[i].title}</b></div>
+            <div>${todo[i].date}</div>
+            <div>${todo[i].assignment[0].name}</div>
+            <button class="delete-button" onclick="deleteTask(${todo[i].id})">x</button>
             </div>`;
     }
 
@@ -105,6 +119,4 @@ function highlight(id) {
 
 function removehighlight(id) {
     document.getElementById(id).classList.remove('drag-highlight');
-
 }
-
