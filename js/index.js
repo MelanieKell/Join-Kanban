@@ -20,7 +20,7 @@ function backToLogin() {
 }
 
 /**
- * Checks if account data exists in array "allSignedUser", if yes leads to addtask.html and if no it shows an alert 
+ * Checks if account data exists in array "allSignedUser", if yes leads to board.html and if no it shows an alert 
  */
 async function login() {
     let email = document.getElementById('id-email').value; 
@@ -28,14 +28,14 @@ async function login() {
     let found = allSignedUser.find(u => u.email === email && u.password === password);
 
     if (found) {
-        window.location.href = "./addtask.html";
+        window.location.href = "./board.html";
     } else {
         alert('Email or password is wrong')
     }
 }
 
 /**
- * Pushes the account data to array "allSignedUser", saves into backend and leads to addtask.html
+ * Pushes the account data to array "allSignedUser", saves into backend and leads to board.html
  */
 async function signInBackend() {
     let name = document.getElementById('id-name').value; 
@@ -52,5 +52,5 @@ async function signInBackend() {
     allSignedUser.push(signedUser);
     await saveToBackendSignUps();
     console.log('saved to Backend');
-    window.location.href = "./addtask.html";
+    window.location.href = "./board.html";
 }

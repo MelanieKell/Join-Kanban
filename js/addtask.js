@@ -98,6 +98,6 @@ function deleteInformation() {
     document.getElementById('id-urgency').value = '';
     document.getElementById('id-description').value = '';
 
-    selectedMembers = [];
+    selectedMembers = []; //array gets cleared for new ticket
     assignToMembers();
 }

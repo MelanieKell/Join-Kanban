@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.bg-board {
+    display: flex;
+    height: 100vh;
+    margin-left: 175px;
+}
+
+.task-area {
+    position: relative;
+    width: 300px;
+    height: 680px;
+    margin: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.board-discription{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 300px;
+    background: rgb(180, 180, 238);
+    color: white;
+    font-size: larger;
+    font-weight: bolder;
+    border-radius: 8px;
+    
+}
+
+.task-board{
+    
+    width: 250px;
+    background-color: white;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.flex{
+    display: flex;
+    margin-top: 50px;
+}
+
+
+
+
+.drag-highlight{
+    background-color:rgba(0, 0, 0, 0.2); ;
+}
+
+
+/* from here: style tab "help" */
+
+.bg-board-help {
+    display: flex;
+    background-color:  rgb(36, 36, 158);
+    height: 100vh;
+    margin-left: 250px;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+}
+
+.headline{
+    height: 50px;
+    width: 900px;
+    font-size: 32px;
+    margin-top: 20px;
+    text-align: center;
+    
+}
+.explain-picture {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 100%;
+    margin-right: 32px;
+    margin-left: 32px;
+    background-color: white;
+}
+
+.explain-section {
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    text-align: center;
+}
+
+.explain-container-element {
+    margin-left: 16px;
+    margin-right: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
