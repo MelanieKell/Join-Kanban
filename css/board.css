@@ -4,17 +4,22 @@ body {
     font-family: 'PT Sans', sans-serif;
 }
 
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
+
 .bg-board {
     display: flex;
     height: 100vh;
-    margin-left: 175px;
+    padding: 10px 20px 20px 190px;
 }
 
 .task-area {
     position: relative;
     width: 300px;
-    height: 680px;
-    margin: 20px;
+    height: 670px;
+    margin: 16px;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     display: flex;
