@@ -40,7 +40,7 @@ function updateHTML() {
     for (let i = 0; i < allTasks.length; i++) {
         const element = allTasks[i];
         document.getElementById('boardColumnToDo').innerHTML += 
-            `<div id="${i}" class="task-board"> 
+            `<div id="taskBoard${i}" onclick="openFullScreen({i})" class="task-board"> 
             <div><b>${todo[i].title}</b></div>
             <div>${todo[i].date}</div>
             <div>${todo[i].assignment[0].name}</div>
@@ -120,3 +120,20 @@ function highlight(id) {
 function removehighlight(id) {
     document.getElementById(id).classList.remove('drag-highlight');
 }
+
+/*  NICHT fertig show task in fullscreen 
+
+
+function openFullScreen (i) {
+
+    document.getElementById('boardColumnToDo').classList.add('taskBoardFullscreen');
+    document.getElementById('taskBoard').src = allTasks[i];
+}
+
+function closeFullScreen (i) {
+
+    document.getElementById('taskBoard').classList.remove = 'display: none;';
+    document.getElementById('boardColumnToDo').classList.remove('taskBoardFullscreen');
+}
+
+*/

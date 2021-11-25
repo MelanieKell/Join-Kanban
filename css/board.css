@@ -25,10 +25,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
 }
 
-.board-discription{
+.board-discription {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,27 +39,39 @@ body {
     font-size: larger;
     font-weight: bolder;
     border-radius: 8px;
-    
+
 }
 
-.task-board{
-    
+.task-board {
+
     width: 250px;
     background-color: white;
     margin-top: 5px;
     text-align: center;
 }
 
-.flex{
+.flex {
     display: flex;
     margin-top: 50px;
 }
 
+#taskBoardFullscreen {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: none;
+}
 
 
-
-.drag-highlight{
-    background-color:rgba(0, 0, 0, 0.2); ;
+.drag-highlight {
+    background-color: rgba(0, 0, 0, 0.2);
+    ;
 }
 
 
@@ -67,7 +79,7 @@ body {
 
 .bg-board-help {
     display: flex;
-    background-color:  rgb(36, 36, 158);
+    background-color: rgb(36, 36, 158);
     height: 100vh;
     margin-left: 250px;
     color: white;
@@ -75,14 +87,15 @@ body {
     align-items: center;
 }
 
-.headline{
+.headline {
     height: 50px;
     width: 900px;
     font-size: 32px;
     margin-top: 20px;
     text-align: center;
-    
+
 }
+
 .explain-picture {
     width: 200px;
     height: 200px;
