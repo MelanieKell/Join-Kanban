@@ -9,13 +9,13 @@ async function init() {
 
 function updateHTML() {
     //To do
-    let todo = allTasks.filter(t => t['board'] == 'boardColumnToDo');
+    let todo = allTasks.filter(t => t['board'] == 'todo');
     document.getElementById('boardColumnToDo').innerHTML = '';
 
     for (let i = 0; i < todo.length; i++) {
         const element = todo[i];
         document.getElementById('boardColumnToDo').innerHTML += 
-            `<div id="taskBoard${i}" onclick="openFullScreen({$i})" class="task-board"> 
+            `<div id="taskBoard${i}" onclick="openFullScreen(${i})" class="task-board"> 
                 <div><b>${element.title}</b></div>
                 <div>${element.date}</div>
                 <div>${element.assignment[0].name}</div>
