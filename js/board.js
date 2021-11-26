@@ -8,30 +8,30 @@ async function init() {
 }
 
 function updateHTML() {
-    let toDo = allTasks.filter(t => t['board'] == 'boardColumnToDo');
+    let todo = allTasks.filter(t => t['board'] == 'boardColumnToDo');
     document.getElementById('boardColumnToDo').innerHTML = '';
 
-    for (let i = 0; i < allTasks.length; i++) {
-        const element = allTasks[i];
-        document.getElementById('boardColumnToDo').innerHTML +=
-            `<div id="${i}" class="task-board"> 
-            <div><b>${allTasks[i].title}</b></div>
-            <div>${allTasks[i].date}</div>
-            <div>${allTasks[i].assignment[0].name}</div>
-         </div>`;
-
+    for (let i = 0; i < todo.length; i++) {
+        const element = todo[i];
+        document.getElementById('boardColumnToDo').innerHTML += 
+            `<div id="taskBoard${i}" onclick="openFullScreen({i})" class="task-board"> 
+                <div><b>${element.title}</b></div>
+                <div>${element.date}</div>
+                <div>${element.assignment[0].name}</div>
+                <button class="delete-button" onclick="deleteTask(${element.id})">x</button>
+            </div>`;
     }
 
     let inProgress = allTasks.filter(t => t['board'] == 'boardColumnInProgress');
     document.getElementById('boardColumnInProgress').innerHTML = '';
 
-    for (let i = 0; i < allTasks.length; i++) {
-        const element = allTasks[i];
+    for (let i = 0; i < inProgress.length; i++) {
+        const element = inProgress[i];
         document.getElementById('boardColumnInProgress').innerHTML +=
             `<div id="${i}" class="task-board"> 
-            <div><b>${allTasks[i].title}</b></div>
-            <div>${allTasks[i].date}</div>
-            <div>${allTasks[i].assignment[0].name}</div>
+            <div><b>${element.title}</b></div>
+            <div>${element.date}</div>
+            <div>${element.aselement.name}</div>
          </div>`;
 
     }
@@ -39,28 +39,27 @@ function updateHTML() {
     let codeReview = allTasks.filter(t => t['board'] == 'boardColumnCodeReview');
     document.getElementById('boardColumnCodeReview').innerHTML = '';
 
-    for (let i = 0; i < allTasks.length; i++) {
-        const element = allTasks[i];
+    for (let i = 0; i < codeReview.length; i++) {
+        const element = codeReview[i];
         document.getElementById('boardColumnCodeReview').innerHTML +=
             `<div id="${i}" class="task-board"> 
-            <div><b>${allTasks[i].title}</b></div>
-            <div>${allTasks[i].date}</div>
-            <div>${allTasks[i].assignment[0].name}</div>
+            <div><b>${element.title}</b></div>
+            <div>${element.date}</div>
+            <div>${element.assignment[0].name}</div>
         </div>`;
 
     }
 
-
     let done = allTasks.filter(t => t['board'] == 'boardColumnDone');
     document.getElementById('boardColumnDone').innerHTML = '';
 
-    for (let i = 0; i < allTasks.length; i++) {
-        const element = allTasks[i];
+    for (let i = 0; i < done.length; i++) {
+        const element = done[i];
         document.getElementById('boardColumnDone').innerHTML +=
             `<div id="${i}" class="task-board"> 
-            <div><b>${allTasks[i].title}</b></div>
-            <div>${allTasks[i].date}</div>
-            <div>${allTasks[i].assignment[0].name}</div>
+            <div><b>${element.title}</b></div>
+            <div>${element.date}</div>
+            <div>${element.assignment[0].name}</div>
         </div>`;
 
     }
