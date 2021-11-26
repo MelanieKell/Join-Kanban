@@ -8,13 +8,14 @@ async function init() {
 }
 
 function updateHTML() {
+    //To do
     let todo = allTasks.filter(t => t['board'] == 'boardColumnToDo');
     document.getElementById('boardColumnToDo').innerHTML = '';
 
     for (let i = 0; i < todo.length; i++) {
         const element = todo[i];
         document.getElementById('boardColumnToDo').innerHTML += 
-            `<div id="taskBoard${i}" onclick="openFullScreen({i})" class="task-board"> 
+            `<div id="taskBoard${i}" onclick="openFullScreen({$i})" class="task-board"> 
                 <div><b>${element.title}</b></div>
                 <div>${element.date}</div>
                 <div>${element.assignment[0].name}</div>
@@ -22,6 +23,7 @@ function updateHTML() {
             </div>`;
     }
 
+    // In Progress
     let inProgress = allTasks.filter(t => t['board'] == 'boardColumnInProgress');
     document.getElementById('boardColumnInProgress').innerHTML = '';
 
@@ -36,6 +38,7 @@ function updateHTML() {
 
     }
 
+    // Code review
     let codeReview = allTasks.filter(t => t['board'] == 'boardColumnCodeReview');
     document.getElementById('boardColumnCodeReview').innerHTML = '';
 
@@ -50,6 +53,7 @@ function updateHTML() {
 
     }
 
+    //Done
     let done = allTasks.filter(t => t['board'] == 'boardColumnDone');
     document.getElementById('boardColumnDone').innerHTML = '';
 
@@ -84,6 +88,17 @@ function highlight(id) {
 
 function removehighlight(id) {
     document.getElementById(id).classList.remove('drag-highlight');
+}
+
+//NICHT fertig show task in fullscreen 
+function openFullScreen (i) {
+    document.getElementById('boardColumnToDo').classList.add('taskBoardFullscreen');
+    document.getElementById('taskBoard').src = allTasks[i];
+}
+
+function closeFullScreen (i) {
+    document.getElementById('taskBoard').classList.remove = 'display: none;';
+    document.getElementById('boardColumnToDo').classList.remove('taskBoardFullscreen');
 }
 
 function setID() {
