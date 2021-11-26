@@ -4,6 +4,11 @@ body {
     font-family: 'PT Sans', sans-serif;
 }
 
+table {
+    border-spacing: 15px 0px;
+    padding: 0px;
+}
+
 .stop-scrolling {
     height: 100%;
     overflow: hidden;
@@ -25,10 +30,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
 }
 
-.board-discription{
+.board-discription {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,18 +44,18 @@ body {
     font-size: larger;
     font-weight: bolder;
     border-radius: 8px;
-    
+
 }
 
-.task-board{
-    
+.task-board {
+
     width: 250px;
     background-color: white;
     margin-top: 5px;
     text-align: center;
 }
 
-.flex{
+.flex {
     display: flex;
     margin-top: 50px;
 }
@@ -58,8 +63,9 @@ body {
 
 
 
-.drag-highlight{
-    background-color:rgba(0, 0, 0, 0.2); ;
+.drag-highlight {
+    background-color: rgba(0, 0, 0, 0.2);
+    ;
 }
 
 
@@ -67,7 +73,7 @@ body {
 
 .bg-board-help {
     display: flex;
-    background-color:  rgb(36, 36, 158);
+    background-color: rgb(36, 36, 158);
     height: 100vh;
     margin-left: 250px;
     color: white;
@@ -75,14 +81,15 @@ body {
     align-items: center;
 }
 
-.headline{
+.headline {
     height: 50px;
     width: 900px;
     font-size: 32px;
     margin-top: 20px;
     text-align: center;
-    
+
 }
+
 .explain-picture {
     width: 200px;
     height: 200px;
@@ -107,4 +114,17 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.div-ticket {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 20px;
+    background-color: yellow;
+    border-radius: 10px;
+    width: 225px;
+    border: 1px solid grey;
 }

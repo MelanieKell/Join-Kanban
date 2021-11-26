@@ -75,7 +75,7 @@ async function createTask() {
             'urgency': urgency,
             'description': description,
             'assignment': assignment,
-            'board': 'todo',
+            'board': 'todo', //board bc category already used
             'id' : new Date().getTime()
         };
     
