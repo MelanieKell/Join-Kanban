@@ -3,6 +3,7 @@ let selectedMembers = [];
 async function init() {
     await downloadFromServer();
     loadAllSignIns(); /* has to load before assignToMembers() */
+    loadAllTasks(); // all have to load again so that new can add up
     includeHTML();
     assignToMembers();
 }
