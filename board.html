@@ -32,44 +32,37 @@
     <div w3-include-html="sidebar.html"></div>
 
     <div class="bg-board">
+        <!-- TO DO -->
         <div class="task-area">
             <div class="board-discription">
                 To do
             </div>
-
-
-            <div id="boardColumnToDo"> </div>
-
-
+            <div class="div-ticket" id="boardColumnToDo" ondrop="moveTo('todo')" ondragover="allowDrop(event)"> </div>
         </div>
 
+        <!-- IN PROGRESS -->
         <div class="task-area">
             <div class="board-discription">
                 In Progress
             </div>
-
-            <div id="boardColumnInProgress"></div>
-
+            <div class="div-ticket" id="boardColumnInProgress" ondrop="moveTo('inProgress')" ondragover="allowDrop(event)"></div>
         </div>
 
+        <!-- CODE REVIEW -->
         <div class="task-area">
             <div class="board-discription">
                 Code Review
             </div>
-
-            <div id="boardColumnCodeReview"></div>
-
+            <div class="div-ticket" id="boardColumnCodeReview" ondrop="moveTo('codeReview')" ondragover="allowDrop(event)"></div>
         </div>
 
+        <!-- DONE -->
         <div class="task-area">
             <div class="board-discription">
                 Done
             </div>
-
-            <div id="boardColumnDone"></div>
-
+            <div class="div-ticket" id="boardColumnDone" ondrop="moveTo('done')" ondragover="allowDrop(event)"></div>
         </div>
-
     </div>
 
 

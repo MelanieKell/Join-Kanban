@@ -7,6 +7,9 @@ async function init() {
     updateHTML();
 }
 
+/**
+ * Shows the tickets in the respective column 
+ */
 function updateHTML() {
     //To do
     let todo = allTasks.filter(t => t['board'] == 'todo');
@@ -15,7 +18,7 @@ function updateHTML() {
     for (let i = 0; i < todo.length; i++) {
         const element = todo[i];
         document.getElementById('boardColumnToDo').innerHTML += 
-            `<div id="taskBoard${i}" onclick="openFullScreen(${i})" class="task-board"> 
+            `<div draggable="true" ondragstart="startDragging(${element['id']})" id="taskBoard${i}" onclick="openFullScreen(${i})" class="task-board"> 
                 <div><b>${element.title}</b></div>
                 <div>${element.date}</div>
                 <div>${element.assignment[0].name}</div>
@@ -24,81 +27,77 @@ function updateHTML() {
     }
 
     // In Progress
-    let inProgress = allTasks.filter(t => t['board'] == 'boardColumnInProgress');
+    let inProgress = allTasks.filter(t => t['board'] == 'inProgress');
     document.getElementById('boardColumnInProgress').innerHTML = '';
 
     for (let i = 0; i < inProgress.length; i++) {
         const element = inProgress[i];
         document.getElementById('boardColumnInProgress').innerHTML +=
-            `<div id="${i}" class="task-board"> 
-            <div><b>${element.title}</b></div>
-            <div>${element.date}</div>
-            <div>${element.aselement.name}</div>
-         </div>`;
+            `<div draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" class="task-board"> 
+                <div><b>${element.title}</b></div>
+                <div>${element.date}</div>
+                <div>${element.assignment[0].name}</div>
+                <button class="delete-button" onclick="deleteTask(${element.id})">x</button>
+            </div>`;
 
     }
 
     // Code review
-    let codeReview = allTasks.filter(t => t['board'] == 'boardColumnCodeReview');
+    let codeReview = allTasks.filter(t => t['board'] == 'codeReview');
     document.getElementById('boardColumnCodeReview').innerHTML = '';
 
     for (let i = 0; i < codeReview.length; i++) {
         const element = codeReview[i];
         document.getElementById('boardColumnCodeReview').innerHTML +=
-            `<div id="${i}" class="task-board"> 
-            <div><b>${element.title}</b></div>
-            <div>${element.date}</div>
-            <div>${element.assignment[0].name}</div>
-        </div>`;
+            `<div draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" class="task-board"> 
+                <div><b>${element.title}</b></div>
+                <div>${element.date}</div>
+                <div>${element.assignment[0].name}</div>
+                <button class="delete-button" onclick="deleteTask(${element.id})">x</button>
+            </div>`;
 
     }
 
     //Done
-    let done = allTasks.filter(t => t['board'] == 'boardColumnDone');
+    let done = allTasks.filter(t => t['board'] == 'done');
     document.getElementById('boardColumnDone').innerHTML = '';
 
-    for (let i = 0; i < done.length; i++) {
+    for (let i = 0; i < done.length; i++) { 
         const element = done[i];
         document.getElementById('boardColumnDone').innerHTML +=
-            `<div id="${i}" class="task-board"> 
-            <div><b>${element.title}</b></div>
-            <div>${element.date}</div>
-            <div>${element.assignment[0].name}</div>
-        </div>`;
+            `<div draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" class="task-board"> 
+                <div><b>${element.title}</b></div>
+                <div>${element.date}</div>
+                <div>${element.assignment[0].name}</div>
+                <button class="delete-button" onclick="deleteTask(${element.id})">x</button>
+            </div>`;
 
     }
 }
 
+/**
+ * Passes the id to the global variable "currentDraggedElement"
+ * @param {number} id - individual number to seperate the tickets
+ */
 function startDragging(id) {
-    currentDraggedElement = id;
+    currentDraggedElement = id; 
 }
 
+/**
+ * Allows the tickets to drop into the div 
+ * @param {string} ev - enables to run the function
+ */
 function allowDrop(ev) {
     ev.preventDefault();
 }
 
-function moveTo(board) {
-    todos[currentDraggedElement]['board'] = board;
-    updateHTML();
-}
-
-function highlight(id) {
-    document.getElementById(id).classList.add('drag-highlight');
-}
-
-function removehighlight(id) {
-    document.getElementById(id).classList.remove('drag-highlight');
-}
-
-//NICHT fertig show task in fullscreen 
-function openFullScreen (i) {
-    document.getElementById('boardColumnToDo').classList.add('taskBoardFullscreen');
-    document.getElementById('taskBoard').src = allTasks[i];
-}
-
-function closeFullScreen (i) {
-    document.getElementById('taskBoard').classList.remove = 'display: none;';
-    document.getElementById('boardColumnToDo').classList.remove('taskBoardFullscreen');
+/**
+ * The category of the tickets with the id of the current dragged element gets new category 
+ * @param {string} category - placeholder variable for toDo/inProgress/codeReview/done
+ */
+function moveTo(category) {
+    allTasks.find(t => t.id === currentDraggedElement)['board'] = category; 
+    updateHTML(); 
 }
 
 function setID() {
@@ -115,64 +114,13 @@ async function deleteTask(id) {
     updateHTML();
 }
 
-/* function updateHTML() {
-    //TO DO 
-    let todo = allTasks.filter(t => t['board'] == 'todo');
-
-    document.getElementById('boardColumnToDo').innerHTML = '';
-
-    for (let i = 0; i < todo.length; i++) {
-        const element = todo[i];
-        document.getElementById('boardColumnToDo').innerHTML += generateToDoHTML(element);
-    }
-
-    //IN PROGRESS
-    let inProgress = allTasks.filter(t => t['board'] == 'inProgess');
-
-    document.getElementById('boardColumnInProgress').innerHTML = '';
-
-    for (let i = 0; i < inProgress.length; i++) {
-        const element = inProgress[i];
-        document.getElementById('boardColumnInProgress').innerHTML += generateToDoHTML(element);
-    }
-
-    //CODE REVIEW
-    let codeReview = allTasks.filter(t => t['board'] == 'codeReview');
-
-    document.getElementById('boardColumnCodeReview').innerHTML = '';
-
-    for (let i = 0; i < codeReview.length; i++) {
-        const element = codeReview[i];
-        document.getElementById('boardColumnCodeReview').innerHTML += generateToDoHTML(element);
-    }
-
-    //DONE
-    let done = allTasks.filter(t => t['board'] == 'done');
-
-    document.getElementById('boardColumnDone').innerHTML = '';
-
-    for (let i = 0; i < allTasks.length; i++) {
-        const element = done[i];
-        document.getElementById('boardColumnDone').innerHTML += generateToDoHTML(element);
-    }
+//NICHT fertig show task in fullscreen 
+function openFullScreen (i) {
+    document.getElementById('boardColumnToDo').classList.add('taskBoardFullscreen');
+    document.getElementById('taskBoard').src = allTasks[i];
 }
 
-function generateToDoHTML(element) {
-    return `
-        <table class="div-ticket" draggable="true" ondragstart="startDragging(${element['id']})">
-            <tr>
-                <td><b>Title:</b></td>
-                <td>${element.title}</td>
-            </tr>
-            <tr>
-                <td><b>Assigne:</b></td>
-                <td>${element.assignment[0].name}</td>
-            </tr>
-            <tr>
-                <td><b>Due date:</b></td>
-                <td>${element.date}</td>
-            </tr>
-        </table>
-        `;
-} 
- */
+function closeFullScreen (i) {
+    document.getElementById('taskBoard').classList.remove = 'display: none;';
+    document.getElementById('boardColumnToDo').classList.remove('taskBoardFullscreen');
+}
