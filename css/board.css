@@ -23,7 +23,7 @@ table {
 .task-area {
     position: relative;
     width: 300px;
-    height: 670px;
+    height: 670px !important;
     margin: 16px;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 8px;

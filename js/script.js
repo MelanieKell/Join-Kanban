@@ -1,5 +1,6 @@
 let allTasks = [];
 let allSignedUser = [];
+let allTicketPositions = [];
 
 setURL('http://gruppe-126.developerakademie.net/smallest_backend_ever');
 
@@ -8,7 +9,7 @@ setURL('http://gruppe-126.developerakademie.net/smallest_backend_ever');
  */
 async function saveToBackendTasks() {
     await backend.setItem('allTasks', JSON.stringify(allTasks));
-    console.log('Saved to backend');
+    console.log('All tasks saved to backend');
 }
 
 /**
@@ -16,7 +17,15 @@ async function saveToBackendTasks() {
  */
 async function saveToBackendSignUps() {
     await backend.setItem('allSignedUser', JSON.stringify(allSignedUser));
-    console.log('Saved to backend');
+    console.log('All signed users saved to backend');
+}
+
+/**
+ * Saves ticket position to backend
+ */
+async function saveToBackendTicketPosition() {
+    await backend.setItem('ticketPosition', JSON.stringify(allTicketPositions));
+    console.log('Ticket position saved to backend');
 }
 
 /**

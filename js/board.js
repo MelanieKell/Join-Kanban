@@ -39,7 +39,6 @@ function updateHTML() {
                 <div>${element.assignment[0].name}</div>
                 <button class="delete-button" onclick="deleteTask(${element.id})">x</button>
             </div>`;
-
     }
 
     // Code review
@@ -55,7 +54,6 @@ function updateHTML() {
                 <div>${element.assignment[0].name}</div>
                 <button class="delete-button" onclick="deleteTask(${element.id})">x</button>
             </div>`;
-
     }
 
     //Done
@@ -71,7 +69,6 @@ function updateHTML() {
                 <div>${element.assignment[0].name}</div>
                 <button class="delete-button" onclick="deleteTask(${element.id})">x</button>
             </div>`;
-
     }
 }
 
@@ -98,6 +95,7 @@ function allowDrop(ev) {
 function moveTo(category) {
     allTasks.find(t => t.id === currentDraggedElement)['board'] = category; 
     updateHTML(); 
+    saveToBackendTasks();
 }
 
 function setID() {
