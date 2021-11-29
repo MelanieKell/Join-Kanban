@@ -88,11 +88,12 @@ td {
 }
 
 .delete-button {
+    z-index: 1;
+    top: 56px;
     border: none;
-    background: none ;
+    background: none;
     position: absolute;
-    top: 5px;
-    right: 5px;
+    right: 37px;
     cursor: pointer;
     }
 

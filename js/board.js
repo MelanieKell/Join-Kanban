@@ -32,8 +32,7 @@ function updateHTML() {
                     <td>Title:</td>
                     <td>${element.title}</td>
                 </tr>
-            </table>
-            </div>`;
+            </table>`;
     }
 
     // In Progress
@@ -43,14 +42,21 @@ function updateHTML() {
     for (let i = 0; i < inProgress.length; i++) {
         const element = inProgress[i];
         document.getElementById('boardColumnInProgress').innerHTML +=
-            `<div draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" onclick="openPopup(${i})" class="task-board"> 
-            <button class="delete-button" onclick="deleteTask(${element.id})">x</button>
-            <p class="task-name font-style">${element.assignment[0].name}</p>
-            <p class="task-title font-style">${element.title}</p>
-            <p class="task-urgency font-style">${element.urgency}</p>
-            <p class="task-text font-style">${element.description}</p>
-            <p class="task-date font-style">${element.date}</p>
-            </div>`;
+            `<table draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" onclick="openPopup(${i})" class="task-board"> 
+                <button class="delete-button" onclick="deleteTask(${element.id})">x</button>
+                <tr>
+                    <td>Assigned to:</td>
+                    <td>${element.assignment[0].name}</td>
+                </tr>
+                <tr>
+                    <td>Due to:</td>
+                    <td>${element.date}</td>
+                </tr>
+                <tr>
+                    <td>Title:</td>
+                    <td>${element.title}</td>
+                </tr>
+            </table>`;
     }
 
     // Code review
@@ -60,14 +66,21 @@ function updateHTML() {
     for (let i = 0; i < codeReview.length; i++) {
         const element = codeReview[i];
         document.getElementById('boardColumnCodeReview').innerHTML +=
-            `<div draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" onclick="openPopup(${i})" class="task-board"> 
-            <button class="delete-button" onclick="deleteTask(${element.id})">x</button>
-            <p class="task-name font-style">${element.assignment[0].name}</p>
-            <p class="task-title font-style">${element.title}</p>
-            <p class="task-urgency font-style">${element.urgency}</p>
-            <p class="task-text font-style">${element.description}</p>
-            <p class="task-date font-style">${element.date}</p>
-            </div>`;
+            `<table draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" onclick="openPopup(${i})" class="task-board"> 
+                <button class="delete-button" onclick="deleteTask(${element.id})">x</button>
+                <tr>
+                    <td>Assigned to:</td>
+                    <td>${element.assignment[0].name}</td>
+                </tr>
+                <tr>
+                    <td>Due to:</td>
+                    <td>${element.date}</td>
+                </tr>
+                <tr>
+                    <td>Title:</td>
+                    <td>${element.title}</td>
+                </tr>
+            </table>`;
     }
 
     //Done
@@ -77,14 +90,21 @@ function updateHTML() {
     for (let i = 0; i < done.length; i++) {
         const element = done[i];
         document.getElementById('boardColumnDone').innerHTML +=
-            `<div draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" class="task-board" onclick="openPopup(${i})"> 
-            <button class="delete-button" onclick="deleteTask(${element.id})">x</button>
-            <p class="task-name font-style">${element.assignment[0].name}</p>
-            <p class="task-title font-style">${element.title}</p>
-            <p class="task-urgency font-style">${element.urgency}</p>
-            <p class="task-text font-style">${element.description}</p>
-            <p class="task-date font-style">${element.date}</p>
-            </div>`;
+            `<table draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" class="task-board" onclick="openPopup(${i})"> 
+                <button class="delete-button" onclick="deleteTask(${element.id})">x</button>
+                <tr>
+                    <td>Assigned to:</td>
+                    <td>${element.assignment[0].name}</td>
+                </tr>
+                <tr>
+                    <td>Due to:</td>
+                    <td>${element.date}</td>
+                </tr>
+                <tr>
+                    <td>Title:</td>
+                    <td>${element.title}</td>
+                </tr>
+            </table>`;
     }
 }
 
