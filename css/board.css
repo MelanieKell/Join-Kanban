@@ -53,7 +53,64 @@ table {
     background-color: white;
     margin-top: 5px;
     text-align: center;
+    position: relative;
+    height: 150px;
+    border-radius: 20px;
+    border: 3px solid rgb(36, 36, 158);
 }
+
+/* Here starts the styling for the task*/
+.font-style {
+    font-size: 14px;
+    
+
+}
+
+.task-name {
+    position: absolute;
+    top: -11px;
+    left: 6px;
+}
+
+.task-title {
+    position: absolute;
+    top: 10px;
+    left: 6px;
+}
+
+.task-date {
+    position: absolute;
+    top: -11px;
+    right: 3px;
+}
+
+.delete-button {
+    border: none;
+    background: none ;
+    position: absolute;
+    top: -6px;
+    right: -17px;
+    cursor: pointer;
+    }
+
+
+.task-text {
+    position: absolute;
+    bottom: 42px;
+    left: 7px;
+}
+
+.task-urgency {
+    position: absolute;
+    top: -11px;
+    left: 103px;
+
+}
+
+
+
+
+/* Here ends the styling*/
 
 .flex {
     display: flex;
@@ -129,7 +186,7 @@ table {
 }
 
 #popup {
-   display: none;
+    display: none;
     position: absolute;
     left: 0;
     right: 0;
@@ -144,4 +201,3 @@ table {
     background-color: white;
 
 }
-  

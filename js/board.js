@@ -17,12 +17,14 @@ function updateHTML() {
 
     for (let i = 0; i < todo.length; i++) {
         const element = todo[i];
-        document.getElementById('boardColumnToDo').innerHTML += 
+        document.getElementById('boardColumnToDo').innerHTML +=
             `<div draggable="true" ondragstart="startDragging(${element['id']})" id="taskBoard${i}" onclick="openPopup(${i})" class="task-board"> 
-                <div><b>${element.title}</b></div>
-                <div>${element.date}</div>
-                <div>${element.assignment[0].name}</div>
-                <button class="delete-button" onclick="deleteTask(${element.id})">x</button>
+            <button class="delete-button" onclick="deleteTask(${element.id})">x</button>
+                <p class="task-name font-style">${element.assignment[0].name}</p>
+                <p class="task-title font-style">${element.title}</p>
+                <p class="task-urgency font-style">${element.urgency}</p>
+                <p class="task-text font-style">${element.description}</p>
+                <p class="task-date font-style">${element.date}</p>
             </div>`;
     }
 
@@ -34,10 +36,12 @@ function updateHTML() {
         const element = inProgress[i];
         document.getElementById('boardColumnInProgress').innerHTML +=
             `<div draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" onclick="openPopup(${i})" class="task-board"> 
-                <div><b>${element.title}</b></div>
-                <div>${element.date}</div>
-                <div>${element.assignment[0].name}</div>
-                <button class="delete-button" onclick="deleteTask(${element.id})">x</button>
+            <button class="delete-button" onclick="deleteTask(${element.id})">x</button>
+            <p class="task-name font-style">${element.assignment[0].name}</p>
+            <p class="task-title font-style">${element.title}</p>
+            <p class="task-urgency font-style">${element.urgency}</p>
+            <p class="task-text font-style">${element.description}</p>
+            <p class="task-date font-style">${element.date}</p>
             </div>`;
     }
 
@@ -49,10 +53,12 @@ function updateHTML() {
         const element = codeReview[i];
         document.getElementById('boardColumnCodeReview').innerHTML +=
             `<div draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" onclick="openPopup(${i})" class="task-board"> 
-                <div><b>${element.title}</b></div>
-                <div>${element.date}</div>
-                <div>${element.assignment[0].name}</div>
-                <button class="delete-button" onclick="deleteTask(${element.id})">x</button>
+            <button class="delete-button" onclick="deleteTask(${element.id})">x</button>
+            <p class="task-name font-style">${element.assignment[0].name}</p>
+            <p class="task-title font-style">${element.title}</p>
+            <p class="task-urgency font-style">${element.urgency}</p>
+            <p class="task-text font-style">${element.description}</p>
+            <p class="task-date font-style">${element.date}</p>
             </div>`;
     }
 
@@ -60,14 +66,16 @@ function updateHTML() {
     let done = allTasks.filter(t => t['board'] == 'done');
     document.getElementById('boardColumnDone').innerHTML = '';
 
-    for (let i = 0; i < done.length; i++) { 
+    for (let i = 0; i < done.length; i++) {
         const element = done[i];
         document.getElementById('boardColumnDone').innerHTML +=
             `<div draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" class="task-board" onclick="openPopup(${i})"> 
-                <div><b>${element.title}</b></div>
-                <div>${element.date}</div>
-                <div>${element.assignment[0].name}</div>
-                <button class="delete-button" onclick="deleteTask(${element.id})">x</button>
+            <button class="delete-button" onclick="deleteTask(${element.id})">x</button>
+            <p class="task-name font-style">${element.assignment[0].name}</p>
+            <p class="task-title font-style">${element.title}</p>
+            <p class="task-urgency font-style">${element.urgency}</p>
+            <p class="task-text font-style">${element.description}</p>
+            <p class="task-date font-style">${element.date}</p>
             </div>`;
     }
 }
@@ -77,7 +85,7 @@ function updateHTML() {
  * @param {number} id - individual number to seperate the tickets
  */
 function startDragging(id) {
-    currentDraggedElement = id; 
+    currentDraggedElement = id;
 }
 
 /**
@@ -93,8 +101,8 @@ function allowDrop(ev) {
  * @param {string} category - placeholder variable for toDo/inProgress/codeReview/done
  */
 async function moveTo(category) {
-    allTasks.find(t => t.id === currentDraggedElement)['board'] = category; 
-    updateHTML(); 
+    allTasks.find(t => t.id === currentDraggedElement)['board'] = category;
+    updateHTML();
     await saveToBackendTasks();
 }
 
@@ -113,16 +121,16 @@ async function deleteTask(id) {
 }
 
 //NICHT fertig show task in fullscreen 
-function openPopup (i) {
-    document.getElementById('taskFullscreen-title').innerHTML = 'title: '+ allTasks[i].title;
-    document.getElementById('taskFullscreen-date').innerHTML = 'date: '+ allTasks[i].date;
-    document.getElementById('taskFullscreen-category').innerHTML = 'category: '+ allTasks[i].category;
-    document.getElementById('taskFullscreen-assignment').innerHTML = 'assignment: '+ allTasks[i].assignment[0].name;
-    document.getElementById('taskFullscreen-urgency').innerHTML = 'urgency: '+ allTasks[i].urgency;
-    document.getElementById('taskFullscreen-description').innerHTML = 'description: '+ allTasks[i].description;
+function openPopup(i) {
+    document.getElementById('taskFullscreen-title').innerHTML = 'title: ' + allTasks[i].title;
+    document.getElementById('taskFullscreen-date').innerHTML = 'date: ' + allTasks[i].date;
+    document.getElementById('taskFullscreen-category').innerHTML = 'category: ' + allTasks[i].category;
+    document.getElementById('taskFullscreen-assignment').innerHTML = 'assignment: ' + allTasks[i].assignment[0].name;
+    document.getElementById('taskFullscreen-urgency').innerHTML = 'urgency: ' + allTasks[i].urgency;
+    document.getElementById('taskFullscreen-description').innerHTML = 'description: ' + allTasks[i].description;
     document.getElementById('popup').style.display = 'block';
 }
 
-function closePopup () {
+function closePopup() {
     document.getElementById('popup').style.display = 'none';
 }
