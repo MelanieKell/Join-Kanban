@@ -92,10 +92,10 @@ function allowDrop(ev) {
  * The category of the tickets with the id of the current dragged element gets new category 
  * @param {string} category - placeholder variable for toDo/inProgress/codeReview/done
  */
-function moveTo(category) {
+async function moveTo(category) {
     allTasks.find(t => t.id === currentDraggedElement)['board'] = category; 
     updateHTML(); 
-    saveToBackendTasks();
+    await saveToBackendTasks();
 }
 
 function setID() {
