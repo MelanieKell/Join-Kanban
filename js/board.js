@@ -19,7 +19,7 @@ function updateHTML() {
         const element = todo[i];
         document.getElementById('boardColumnToDo').innerHTML +=
             `<div style="position: relative">
-                <table draggable="true" ondragstart="startDragging(${element['id']})" id="taskBoard${i}" onclick="openPopup(${i})" class="task-board">
+                <table draggable="true" ondragstart="startDragging(${element['id']})" id="taskBoard${i}" onclick="openPopup(${element['id']})" class="task-board">
                     <tr>
                         <td>Assigned to:</td>
                         <td>${element.assignment[0].name}</td>
@@ -46,7 +46,7 @@ function updateHTML() {
         const element = inProgress[i];
         document.getElementById('boardColumnInProgress').innerHTML +=
             `<div style="position:relative">
-                <table draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" onclick="openPopup(${i})" class="task-board"> 
+                <table draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" onclick="openPopup(${element['id']})" class="task-board"> 
                     <tr>
                         <td>Assigned to:</td>
                         <td>${element.assignment[0].name}</td>
@@ -73,7 +73,7 @@ function updateHTML() {
         const element = codeReview[i];
         document.getElementById('boardColumnCodeReview').innerHTML +=
             `<div style="position:relative">
-                <table draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" onclick="openPopup(${i})" class="task-board"> 
+                <table draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" onclick="openPopup(${element['id']})" class="task-board"> 
                     <tr>
                         <td>Assigned to:</td>
                         <td>${element.assignment[0].name}</td>
@@ -100,7 +100,7 @@ function updateHTML() {
         const element = done[i];
         document.getElementById('boardColumnDone').innerHTML +=
         `<div style="position:relative">
-            <table draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" onclick="openPopup(${i})" class="task-board"> 
+            <table draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" onclick="openPopup(${element['id']})" class="task-board"> 
                 <tr>
                     <td>Assigned to:</td>
                     <td>${element.assignment[0].name}</td>
