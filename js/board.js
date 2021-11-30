@@ -99,24 +99,24 @@ function updateHTML() {
     for (let i = 0; i < done.length; i++) {
         const element = done[i];
         document.getElementById('boardColumnDone').innerHTML +=
-            `<div style="position:relative">
-                <table draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" class="task-board" onclick="openPopup(${i})"> 
-                    <tr>
-                        <td>Assigned to:</td>
-                        <td>${element.assignment[0].name}</td>
-                    </tr>
-                    <tr>
-                        <td>Due to:</td>
-                        <td>${element.date}</td>
-                    </tr>
-                    <tr>
-                        <td>Title:</td>
-                        <td>${element.title}</td>
-                    </tr>
-                </table>
-                <div class="delete-button" onclick="deleteTask(${element.id})">x</div>
-            </div>
-            `;
+        `<div style="position:relative">
+            <table draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" onclick="openPopup(${i})" class="task-board"> 
+                <tr>
+                    <td>Assigned to:</td>
+                    <td>${element.assignment[0].name}</td>
+                </tr>
+                <tr>
+                    <td>Due to:</td>
+                    <td>${element.date}</td>
+                </tr>
+                <tr>
+                    <td>Title:</td>
+                    <td>${element.title}</td>
+                </tr>
+            </table>
+            <div class="delete-button" onclick="deleteTask(${element.id})">x</div>
+        </div>
+        `;
     }
 }
 
@@ -161,14 +161,16 @@ async function deleteTask(id) {
 }
 
 //NICHT fertig show task in fullscreen 
-function openPopup(i) {
-    document.getElementById('taskFullscreen-title').innerHTML = 'title: ' + allTasks[i].title;
-    document.getElementById('taskFullscreen-date').innerHTML = 'date: ' + allTasks[i].date;
-    document.getElementById('taskFullscreen-category').innerHTML = 'category: ' + allTasks[i].category;
-    document.getElementById('taskFullscreen-assignment').innerHTML = 'assignment: ' + allTasks[i].assignment[0].name;
-    document.getElementById('taskFullscreen-urgency').innerHTML = 'urgency: ' + allTasks[i].urgency;
-    document.getElementById('taskFullscreen-description').innerHTML = 'description: ' + allTasks[i].description;
-    document.getElementById('popup').style.display = 'block';
+function openPopup(id) {
+    let task = allTasks.find(t => t.id === id);
+    let pos = allTasks.indexOf(task);
+    document.getElementById('taskFullscreen-title').innerHTML = 'Title: <br> ' + allTasks[pos].title;
+    document.getElementById('taskFullscreen-date').innerHTML = 'Due to:<br> ' + allTasks[pos].date;
+    document.getElementById('taskFullscreen-category').innerHTML = 'Category:<br> ' + allTasks[pos].category;
+    document.getElementById('taskFullscreen-assignment').innerHTML = 'Assigned to:<br> ' + allTasks[pos].assignment[0].name;
+    document.getElementById('taskFullscreen-urgency').innerHTML = 'Urgency:<br> ' + allTasks[pos].urgency;
+    document.getElementById('taskFullscreen-description').innerHTML = 'Task description:<br> ' + allTasks[pos].description;
+    document.getElementById('popup').style.display = 'flex';
 }
 
 function closePopup() {
