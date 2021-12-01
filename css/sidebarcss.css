@@ -9,7 +9,7 @@ body {
     flex-direction: column;
     font-size: 25px;
     color: white;
-    position: absolute;
+    position: fixed;
     
 }
 

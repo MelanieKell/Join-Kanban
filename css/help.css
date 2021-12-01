@@ -8,10 +8,7 @@ body {
     font-family: 'PT Sans', sans-serif;
 }
 
-.stop-scrolling {
-    height: 100%;
-    overflow: hidden;
-}
+
 
 .bg-board-help {
     display: flex;
@@ -60,4 +57,9 @@ body {
     object-fit: contain;
     height:400px;
     width: 400px;
+}
+
+.imprint{
+    padding-left: 50px;
+    padding-bottom: 50px;
 }
