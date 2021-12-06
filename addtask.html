@@ -30,10 +30,13 @@
 <body onload="init()" class="stop-scrolling">
     <div w3-include-html="sidebar.html"></div>
 
-    <div style="height: 100vh; padding: 10px 30px 0px 220px">
-        <div style="margin: 20px 0px">
-            <b style="font-size: 30px;">Add task</b><br>
-            <p class="color bold">Learning Management System Project</p> 
+    <div class="div-position">
+        <div style="margin: 20px 0px; display:flex; justify-content: space-between;">
+            <div style="display:flex;flex-direction: column;">
+                <b style="font-size: 30px;">Add task</b>
+                <div class="color bold">Learning Management System Project</div>
+            </div>
+            <img onclick="sidebarFullscreen()" class="img-sidebarBtn d-none" src="img/sidebarBtn.png">
         </div>
         <div class="div-background">
             <form onsubmit="createTask(); return false;"> <!-- when no "return false" the page refreshes after confirming the alert "Please select an assigne!" -->
@@ -63,13 +66,12 @@
                     </div>
                     <div class="div-padding">
                         <p class="color bold">ASSIGNED TO</p>
-                        <table class="div-column">
-                            <tbody id="id-assignment">
-                            </tbody>
+                        <table>
+                            <tbody class="div-tbody"id="id-assignment"></tbody>
                         </table>
                     </div>
                 </div>
-                <div style="display: flex; align-items: center; margin: 20px 0px 10px 0px">
+                <div class="div-createOrCancel">
                     <p class="text-cancel color">CANCEL</p>
                     <button type="submit" id="id-createTask" class="text-createTask">CREATE TASK</button>
                 </div>

@@ -5,6 +5,7 @@ async function init() {
     loadAllTasks(); //necessary to use "allTasks"
     includeHTML();
     updateHTML();
+    canvasInfo = canvas.getBoundingClientRect();
 }
 
 /**

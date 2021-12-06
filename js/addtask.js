@@ -19,8 +19,7 @@ function assignToMembers() {
 
         document.getElementById('id-assignment').innerHTML += `
             <tr id="id-tr">
-                <td><img class="img-profilePicture" src="${Member['img']}"></td>
-                <td>${Member['name']}</td>
+                <td style="display:flex; align-items: center"><img class="img-profilePicture" src="${Member['img']}">${Member['name']}</td>
                 <td><img onclick="select(${i})" id="id-add${i}" class="img-add" src="img/plus.png"></td>
                 <td><div onclick="deleteUser(${i})" class="div-deleteUser"><b>Delete user</b></div></td>
             </tr>

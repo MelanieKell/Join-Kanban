@@ -25,3 +25,21 @@ function includeHTML() {
     }
   }
 }
+
+/**
+ * Shows sidebar fullscreen
+ */
+ function sidebarFullscreen() {
+    document.getElementById('id-sidebar').classList.remove('side-bar');
+    document.getElementById('id-sidebar').classList.add('sidebarFullscreen');
+
+    document.getElementById('id-links').classList.remove('links');
+    document.getElementById('id-links').classList.add('linksFullscreen');
+
+    document.getElementById('id-joinlogoFullscreen').classList.add('img-joinlogo');
+
+    document.getElementById('id-profilePicture').classList.add('div-profilePicture');
+
+    document.getElementById('id-member-img').classList.remove('member-img');
+    document.getElementById('id-member-img').classList.add('member-imgFullscreen');
+}
