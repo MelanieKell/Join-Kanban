@@ -33,10 +33,11 @@ function includeHTML() {
     document.getElementById('id-sidebar').classList.remove('side-bar');
     document.getElementById('id-sidebar').classList.add('sidebarFullscreen');
 
+    document.getElementById('id-linkText').classList.remove('link-text');
+    document.getElementById('id-linkText').classList.add('link-textFullscreen');
+
     document.getElementById('id-links').classList.remove('links');
     document.getElementById('id-links').classList.add('linksFullscreen');
-
-    document.getElementById('id-joinlogoFullscreen').classList.add('img-joinlogo');
 
     document.getElementById('id-profilePicture').classList.add('div-profilePicture');
 

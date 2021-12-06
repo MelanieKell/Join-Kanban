@@ -38,10 +38,6 @@ body {
     margin-top: 42px;
 }
 
-.img-joinlogo {
-    margin-left: 45px;
-}
-
 .div-profilePicture {
     display: flex;
     justify-content: center;
@@ -57,14 +53,23 @@ a:link {
     color: white;
     margin-top: 5px;
     font-size: 27px;
-    margin-left: 40px;
+    margin-left: 0px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.link-textFullscreen {
+    color: white;
+    margin-top: 5px;
+    font-size: 27px;
+    margin-left: 0px;
     font-family: 'Open Sans', sans-serif;
 }
 
 .sidebar-links {
     margin-top: 5px;
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+    padding-left: 20px;
 }
 
 .sidebar-img {
@@ -113,5 +118,35 @@ a:link {
 @media (max-width: 600px) {
     .side-bar {
         display: none;
+    }
+}
+
+@media (max-height: 525px) {
+    .side-bar {
+        display: none;
+    }
+}
+
+@media (max-height: 500px) {
+    .div-profilePicture {
+        margin-top: 40px;
+    }
+}
+
+@media (max-height: 430px) {
+    .linksFullscreen {
+        margin-top: 10px;
+    }
+}
+
+@media (max-height: 400px) {
+    .div-profilePicture {
+        margin-top: 10px;
+    }
+}
+
+@media (max-height: 375px) {
+    .logo {
+        margin-top: 10px;
     }
 }

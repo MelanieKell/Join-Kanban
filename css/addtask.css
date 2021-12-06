@@ -184,3 +184,13 @@ td {
         display:flex;
     }
 }
+
+@media (max-height: 525px) {
+    .img-sidebarBtn {
+        display: unset;
+    }
+
+    .div-position {
+        padding: 10px 30px 0px 30px;
+    }
+}
