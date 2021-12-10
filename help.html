@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./css/help.css">
 
     <!-- JS -->
- 
+
     <script src="./js/sidebar.js"></script>
     <!-- Backend -->
     <script src="./js/mini_backend.js"></script>
@@ -24,53 +24,82 @@
 <body onload="includeHTML()" class="stop-scrolling">
     <div w3-include-html="sidebar.html"></div>
 
-    <div class="bg-board-help">
-        <div class="headline"><b>JOIN</b> Kanban Board<br>
-            So machen Sie Ihre Arbeit sichtbar und verbessern die Teamarbeit
+    <div class="div-position">
+        <div style="display: flex; flex-direction: column;">
+            <b style="font-size: 30px;">Help</b>
+            <p>How to work with Join Kanban-Board</p>
         </div>
-
-        <div class="explain-section bg1" id="how-it-works">
-
-            <div class="explain-container-element">
-                <img class="explain-picture" src="img/newTask.jpg"><br>
-                <h3 class="text-center"> Aufgaben erstellen</h3><br>
-                <p class="text-center text-grey"> Unter "Add task" können Sie Aufgaben erstellen und diese direkt einem
-                    Teammitglied zuweisen. <br>
-                </p>
-                <div>
-                    <img class="help-description-img" src="img/help_addTask.jpg">
-                </div>
-            </div>
-
-            <div class="explain-container-element" v>
-                <img class="explain-picture" src="img/monitoring.jpg"><br>
-                <h3 class="text-center"> Status nachvollziehen</h3><br>
-                <p class="text-center text-grey">In welchem Status sich die Aufgaben befinden, können Sie im Board
-                    betrachten.<br>
-                </p>
-                <div>
-                    <img class="help-description-img" src="img/help_board.jpg">
-                </div>
-            </div>
-
-            <div class="explain-container-element">
-                <img class="explain-picture" src="img/overview.png"><br>
-                <h3 class="text-center"> Übersicht behalten</h3><br>
-                <p class="text-center text-grey">Verschaffen Sie sich einen schnellen Überblick über alle Aufgaben unter
-                    dem Punkt "Backlog". </p>
-                <div>
-                    <img class="help-description-img" src="img/help_backlog.jpg">
-                </div>
-            </div>
-                
-
+        <div style="display: flex; flex-direction: column;">
+            <h3>Before you start</h2>
+                <p>1. You might need to install a plugins to bypass CORS, for example <a
+                        style="text-decoration: underline;"
+                        href="https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf">this
+                        one</a></p>
+                <p>2. Install the Plugin, then you have access to backend.</p>
         </div>
+        <div style="display: flex; flex-direction: column;">
+            <h3>Add task</h2>
+                <p>1. Go to <b>'Add task'</b></p>
+                <p>2. Type in Title, Category, Description, Due Date, Urgency and add a person who has to solve the task
+                </p>
+                <p>3. Click the button <b>'Create Task'</b></p>
+        </div>
+        <div style="display: flex; flex-direction: column;">
+            <h3>Backlog</h2>
+                <p>1. Go to <b>'Backlog'</b></p>
+                <p>2. All created task ideas are collected here</p>
+                <p>3. Click the button <b>'Activate'</b> to add the task to board</p>
+        </div>
+        <div style="display: flex; flex-direction: column;">
+            <h3>Board</h2>
+                <p>1. Go to <b>'Board'</b></p>
+                <p>2. The activated task lands in the first column <b>'To do'</b></p>
+                <p>3. Depending on the work progress you can move the ticket by drag and drop</p>
+                <p>4. Click on the ticket to show more information</p>
+        </div>
+        <div style="margin-top: 30px;">
+            <h1>Imprint</h1>
+            <br>
+            <h2>Information according to § 5 TMG</h2>
+            <p>Mario Neubacher<br />
+                Primesberg 27<br />
+                4822 Bad Goisern<br>
+                Österreich</p>
+            <br>
+            <h2>Contact</h2>
+            <p>Telefon: +43 660 59 24 006<br />
+                E-Mail: neubacher.mario00@gmail.com</p>
+            <br>
+            <p><strong>Disclaimer: </strong><br><br><strong>Liability for contents</strong><br><br>
+                The contents of our pages have been created with the utmost care. However, we cannot guarantee the
+                accuracy, completeness and timeliness of the content. As a service provider, we are responsible for our
+                own content on these pages in accordance with the general laws pursuant to § 7 Para.1 TMG. According to
+                §§ 8 to 10 TMG, however, we are not obligated as a service provider to monitor transmitted or stored
+                third-party information or to investigate circumstances that indicate illegal activity. Obligations to
+                remove or block the use of information under the general laws remain unaffected. However, liability in
+                this regard is only possible from the point in time at which a concrete infringement of the law becomes
+                known. If we become aware of any such infringements, we will remove the relevant content immediately.
 
+                entfernen.<br><br><strong>Data protection</strong><br><br>
 
-
-            
-        
-
+                The use of our website is generally possible without providing personal data. As far as on our sides
+                personal data (such as name, address or e-mail addresses) are collected, this is as far as possible on a
+                voluntary basis. This data will not be passed on to third parties without your express consent.
+                We point out that data transmission over the Internet (eg communication by e-mail) security gaps.
+                Complete protection of data against access by third parties is not possible.
+                The use of contact data published within the framework of the imprint obligation by third parties for
+                the purpose of sending unsolicited advertising and information materials is hereby expressly prohibited.
+                The operators of the pages expressly reserve the right to take legal action in the event of the
+                unsolicited sending of advertising information, such as spam e-mails.<br>
+            </p>
+            <br>
+            <strong>Images Copyright</strong><br>
+            <a target="_blank" href="https://icons8.com/icon/83268/menu-vertical">Menu Vertical</a> icon by <a
+                target="_blank" href="https://icons8.com">Icons8</a>
+            <br>
+            <br>
+        </div>
+    </div>
 </body>
 
 </html>

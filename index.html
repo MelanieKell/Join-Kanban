@@ -28,29 +28,37 @@
 </head>
 
 <body onload="init()" style="display:flex; justify-content: center; align-items: center; height: 100vh">
-    <div class="div-background">
-        <img style="margin-bottom: 50px;" src="./img/logo.png">
-        <div id="id-formLogin">
-            <form class="div-column" onsubmit="login(); return false">
-                <input id="id-email" class="div-input" required placeholder="Email" type="email">
-                <input id="id-password" class="div-input" required placeholder="Password" type="password">
-                <button class="div-login" type="submit">
-                    Login
-                </button>
-            </form>
-            <a id="id-loginAsGuest" style="color:white; margin: 10px; display: flex;justify-content: center;" href="board.html">Login as guest</a>
-            <p id="id-signIn" onclick="signIn()" style="text-align:center; cursor:pointer; color:white; text-decoration: underline;">Sign in</p>
-        </div>     
-        <div id="id-formSignIn" class="d-none">
-            <form class="div-column" onsubmit="signInBackend(); return false"> 
-                <input id="id-name" class="div-input" required placeholder="Name" type="text">
-                <input id="id-email1" class="div-input" required placeholder="Email" type="email">
-                <input id="id-password1" class="div-input" required placeholder="Password" type="password">
-                <button class="div-login" type="submit">
-                    <p id="id-login">Sign in</p>
-                </button>
-            </form>        
-            <p id="id-backToLogin" onclick="backToLogin()" class="text-backToLogin">Back to login</p>
+    <div style="display:flex;flex-direction: column; justify-content: center; align-items: center;">
+        <div style="display:flex;flex-direction:column; text-align: center; align-items: center; margin-bottom: 30px;">
+            <b style="font-size: 25px;padding:10px">Kanban Board</b>
+            <p style="font-size: 17.5px;">Created by three developers during a group project of the Developer Akademie.</p>
+        </div>
+        <div class="div-background">
+            <img style="margin-bottom: 50px;" src="./img/logo.png">
+            <div id="id-formLogin">
+                <form class="div-column" onsubmit="login(); return false">
+                    <input id="id-email" class="div-input" required placeholder="Email" type="email">
+                    <input id="id-password" class="div-input" required placeholder="Password" type="password">
+                    <button class="div-login" type="submit">
+                        Login
+                    </button>
+                </form>
+                <a id="id-loginAsGuest" style="color:white; margin: 10px; display: flex;justify-content: center;"
+                    href="board.html">Login as guest</a>
+                <p id="id-signIn" onclick="signIn()"
+                    style="text-align:center; cursor:pointer; color:white; text-decoration: underline;">Sign in</p>
+            </div>
+            <div id="id-formSignIn" class="d-none">
+                <form class="div-column" onsubmit="signInBackend(); return false">
+                    <input id="id-name" class="div-input" required placeholder="Name" type="text">
+                    <input id="id-email1" class="div-input" required placeholder="Email" type="email">
+                    <input id="id-password1" class="div-input" required placeholder="Password" type="password">
+                    <button class="div-login" type="submit">
+                        <p id="id-login">Sign in</p>
+                    </button>
+                </form>
+                <p id="id-backToLogin" onclick="backToLogin()" class="text-backToLogin">Back to login</p>
+            </div>
         </div>
     </div>
 </body>
