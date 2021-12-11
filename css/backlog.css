@@ -87,15 +87,19 @@ body {
 
 .category {
     /* id */
-    padding-top: 14px;
+   
     padding-left: 70px;
     width: 105px;
+    display: flex;
+    align-items: center;
 }
 
 .details-history {
     /* id */
     width: 520px;
     padding-left: 73px;
+    display: flex;
+    align-items: center;
 }
 
 .email {
@@ -104,4 +108,59 @@ body {
 
 .members-list {
     display: flex;
+}
+
+
+
+@media (max-width: 1000px) {
+
+
+.backlog {
+    margin-left: 2px;
+}
+
+.title-backlog {
+    text-align: center;
+}
+
+.title-text {
+    text-align: center;
+}
+
+
+.history {
+    width: fit-content;
+
+}
+
+.details {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.category {
+    width: fit-content;
+    padding-left: 0px;
+    
+}
+
+.details-history {
+    width: 179px;
+}
+
+
+
+.user-data {
+    width: 150px;
+}
+
+.a1 {
+    padding-right: 0px;
+}
+.a2{
+    padding-right: 0px;
+}
+
+
 }
