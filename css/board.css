@@ -22,14 +22,14 @@ td {
 .bg-board {
     display: flex;
     height: 100vh;
-    padding: 0px 0px 0px 190px;
+    padding: 0px 0px 0px 210px;
     overflow-x: auto;
 }
 
 .task-area {
     position: relative;
     width: 300px; 
-    margin: 20px 30px;
+    margin: 20px 30px 20px 0px;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     display: flex;
