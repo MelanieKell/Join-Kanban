@@ -21,10 +21,11 @@
 <body id="id-body" onload="includeHTML()">
     <div w3-include-html="sidebar.html"></div>
 
-    <img onclick="sidebarFullscreen()" id="id-sidebarFullscreen" class="img-sidebarBtn" style="position: fixed; top: 0; right: 0" src="img/sidebarBtn.png">
-    
+    <img onclick="sidebarFullscreen()" id="id-sidebarFullscreen" class="img-sidebarBtn"
+        style="position: fixed; top: 0; right: 0" src="img/sidebarBtn.png">
+
     <div class="div-position">
-        <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; flex-direction: column; border-bottom: 1px solid black;">
             <b class="font-help">Help</b>
             <p>How to work with Join Kanban Board</p>
         </div>
@@ -56,7 +57,7 @@
                 <p>3. Depending on the work progress you can move the ticket by drag and drop</p>
                 <p>4. Click on the ticket to show more information</p>
         </div>
-        <div style="margin-top: 30px;">
+        <div style="margin-top: 30px; background-color: #EBEDFC; border-radius: 10px; padding: 20px">
             <h1>Imprint</h1>
             <br>
             <h2>Information according to § 5 TMG</h2>
@@ -66,7 +67,7 @@
                 Österreich</p>
             <br>
             <h2>Contact</h2>
-            <p>Telefon: +43 660 59 24 006<br />
+            <p style="word-break: break-all;">Telefon: +43 660 59 24 006<br />
                 E-Mail: neubacher.mario00@gmail.com</p>
             <br>
             <p><strong>Disclaimer: </strong><br><br><strong>Liability for contents</strong><br><br>
@@ -91,16 +92,20 @@
                 The operators of the pages expressly reserve the right to take legal action in the event of the
                 unsolicited sending of advertising information, such as spam e-mails.<br>
             </p>
-            <br>
+        </div>
+
+        <br>
+        <div style="padding: 0px 20px">
             <strong>Images Copyright</strong><br>
             <a target="_blank" href="https://icons8.com/icon/83268/menu-vertical">Menu Vertical</a> icon by <a
                 target="_blank" href="https://icons8.com">Icons8</a>
-                <br>
+            <br>
             <a target="_blank" href="https://icons8.com/icon/7u9JCGRXVSyG/up-squared">Up Squared</a> icon by <a
                 target="_blank" href="https://icons8.com">Icons8</a>
-            <br>
-            <br>
         </div>
+        <br>
+        <br>
+
         <img id="id-scrollToTop" onclick="scrollToTop()" class="img-arrowToTop d-none" src="img/arrowTop.png">
     </div>
 </body>

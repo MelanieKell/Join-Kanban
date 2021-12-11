@@ -220,15 +220,23 @@ td {
     }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
     #taskFullscreen {
         width: 80%;
+    }
+
+    .task-area {
+        margin: 35px 30px 20px 30px;
     }
 }
 
 @media (max-height: 525px) {
     .bg-board {
-        padding: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 35px;
+    }
+
+    .task-area {
+        margin: 35px 30px 20px 0px;
     }
 
     .div-ticketsResponsive {
