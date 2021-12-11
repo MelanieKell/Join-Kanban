@@ -27,16 +27,17 @@
     <script src="./js/script.js"></script> <!-- extra file for clarity -->
 </head>
 
-<body onload="init()">
+<body id="id-body" onload="init()">
     <div w3-include-html="sidebar.html"></div>
 
+    <img onclick="sidebarFullscreen()" id="id-sidebarFullscreen" class="img-sidebarBtn" style="position: fixed; top: 0; right: 0" src="img/sidebarBtn.png">
+
     <div class="div-position">
-        <div style="padding: 20px 0px; display:flex; justify-content: space-between;">
+        <div style="padding-bottom: 20px; display:flex; justify-content: space-between;">
             <div style="display:flex;flex-direction: column;">
                 <b style="font-size: 30px;">Add task</b>
                 <div class="color bold">Learning Management System Project</div>
             </div>
-            <img onclick="sidebarFullscreen()" id="id-sidebarFullscreen" class="img-sidebarBtn" src="img/sidebarBtn.png">
         </div>
         <div class="div-background">
             <form onsubmit="createTask(); return false;"> <!-- when no "return false" the page refreshes after confirming the alert "Please select an assigne!" -->

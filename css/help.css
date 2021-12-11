@@ -84,6 +84,11 @@ h3 {
     cursor: pointer;
 }
 
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
+
 .img-arrowToTop:hover {
     opacity: 0.75;
 }
@@ -91,5 +96,11 @@ h3 {
 @media (max-width: 600px) {
     .div-position {
         padding: 10px 30px 0px 30px;
+    }
+}
+
+@media (max-height: 525px) {
+    .div-position {
+        padding: 0px 30px 0px 30px;
     }
 }

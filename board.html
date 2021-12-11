@@ -28,18 +28,21 @@
 
 </head>
 
-<body onload="init()">
+<body id="id-body" onload="init()">
     <div w3-include-html="sidebar.html"></div>
 
-    <img onclick="sidebarFullscreen()" id="id-sidebarFullscreen" class="img-sidebarBtn" src="img/sidebarBtn.png">
-        
+    <img onclick="sidebarFullscreen()" id="id-sidebarFullscreen" class="img-sidebarBtn pos-sidebarBtnBoard"
+        src="img/sidebarBtn.png">
+
     <div class="bg-board">
         <!-- TO DO -->
         <div class="task-area">
             <div class="board-discription">
                 To do
             </div>
-            <div class="div-ticket" id="boardColumnToDo" ondrop="moveTo('todo')" ondragover="allowDrop(event)"> </div>
+            <div class="div-ticketsResponsive">
+                <div class="div-ticket" id="boardColumnToDo" ondrop="moveTo('todo')" ondragover="allowDrop(event)"> </div>
+            </div>
         </div>
 
         <!-- IN PROGRESS -->
@@ -47,8 +50,7 @@
             <div class="board-discription">
                 In Progress
             </div>
-            <div class="div-ticket" id="boardColumnInProgress" ondrop="moveTo('inProgress')"
-                ondragover="allowDrop(event)"></div>
+            <div class="div-ticket" id="boardColumnInProgress" ondrop="moveTo('inProgress')" ondragover="allowDrop(event)"></div>
         </div>
 
         <!-- CODE REVIEW -->
@@ -73,16 +75,18 @@
     </div>
 
     <div id="popup" style="display: none;">
-        <div id="taskFullscreen" >
+        <div id="taskFullscreen" style="position: relative">
             <p id="taskFullscreen-title"></p>
-            <p id="taskFullscreen-category"></p>
-            <p id="taskFullscreen-assignment"></p>
-            <p id="taskFullscreen-date"></p>
-            <p id="taskFullscreen-urgency"></p>
-            <p id="taskFullscreen-description"></p>
-            <button class="close-btn"onclick="closePopup()">Close</button>
+            <div class="div-scrollbox">
+                <p id="taskFullscreen-category"></p>
+                <p id="taskFullscreen-assignment"></p>
+                <p id="taskFullscreen-date"></p>
+                <p id="taskFullscreen-urgency"></p>
+                <p id="taskFullscreen-description"></p>
+            </div>
+            <div class="close-btn" onclick="closePopup()">X</div>
         </div>
-       
+
     </div>
 
 </body>

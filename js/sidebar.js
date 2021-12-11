@@ -30,7 +30,7 @@ function includeHTML() {
  * Shows sidebar fullscreen
  */
  function sidebarFullscreen() {
-    document.getElementById('id-sidebarFullscreen').classList.add('stop-scrolling');
+    document.getElementById('id-body').classList.add('stop-scrolling');
 
     document.getElementById('id-sidebar').classList.remove('side-bar');
     document.getElementById('id-sidebar').classList.add('sidebarFullscreen');
