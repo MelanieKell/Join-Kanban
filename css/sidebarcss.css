@@ -116,18 +116,38 @@ a:link {
     position: absolute;
     bottom: -25px;
     font-size: 18px;
+}
 
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
+
+.img-sidebarBtn {
+    height: 40px;
+    width: 40px;
+    margin: 10px 0px 0px 0px;
+    /* display: none; */
+    cursor: pointer;
 }
 
 @media (max-width: 600px) {
     .side-bar {
         display: none;
     }
+
+    .img-sidebarBtn {
+        display: unset;
+    }
 }
 
 @media (max-height: 525px) {
     .side-bar {
         display: none;
+    }
+
+    .img-sidebarBtn {
+        display: unset;
     }
 }
 

@@ -87,3 +87,9 @@ h3 {
 .img-arrowToTop:hover {
     opacity: 0.75;
 }
+
+@media (max-width: 600px) {
+    .div-position {
+        padding: 10px 30px 0px 30px;
+    }
+}
