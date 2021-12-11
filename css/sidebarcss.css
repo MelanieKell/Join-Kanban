@@ -33,7 +33,9 @@ body {
     justify-content: space-between;
     flex-direction: column;
     margin-top: 42px;
+    text-decoration: none ;
 }
+
 
 .linksFullscreen {
     display: flex;
@@ -50,8 +52,9 @@ body {
     margin-top: 100px;
 }
 
-a:link {
-    text-decoration: none;
+a:hover {
+    text-decoration: underline;
+    text-decoration-color: white;
 }
 
 .link-text {
@@ -75,6 +78,7 @@ a:link {
     display: flex;
     justify-content: space-between;
     padding-left: 20px;
+    text-decoration: none;
 }
 
 .sidebar-img {
