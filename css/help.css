@@ -17,7 +17,7 @@ h3 {
 }
 
 .div-position {
-    height: 100vh; 
+    height: 100vh;
     padding: 30px 30px 0px 220px;
 }
 
@@ -64,13 +64,26 @@ h3 {
     align-items: center;
 }
 
-.help-description-img{
+.help-description-img {
     object-fit: contain;
-    height:400px;
+    height: 400px;
     width: 400px;
 }
 
-.imprint{
+.imprint {
     padding-left: 50px;
     padding-bottom: 50px;
+}
+
+.img-arrowToTop {
+    position: fixed;
+    right: 5px;
+    bottom: 20px;
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+}
+
+.img-arrowToTop:hover {
+    opacity: 0.75;
 }

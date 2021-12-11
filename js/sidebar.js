@@ -44,3 +44,34 @@ function includeHTML() {
     document.getElementById('id-member-img').classList.remove('member-img');
     document.getElementById('id-member-img').classList.add('member-imgFullscreen');
 }
+
+/**
+ * Shows the arrow which leads to the top if scrolled past certain pixels
+ */
+ window.onscroll = showBtn;
+
+ function showBtn() {
+     if (scrolledPastCertainPixels()) {
+         document.getElementById('id-scrollToTop').classList.remove('d-none');
+     } else {
+         document.getElementById('id-scrollToTop').classList.add('d-none');
+     }
+ }
+
+ /**
+ * Gave condition meaning for clean coding
+ * @returns - Whether the certain pixels passed
+ */
+function scrolledPastCertainPixels(){
+  return document.body.scrollTop > 300 || document.documentElement.scrollTop > 300;
+}
+
+/**
+ * Clicked on the arrow image it jumps back to the top 
+ */
+ function scrollToTop() {
+  window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+  })
+}
