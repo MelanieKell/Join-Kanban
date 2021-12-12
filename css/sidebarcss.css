@@ -51,14 +51,28 @@ body {
     align-items: center;
     margin-top: 100px;
 }
-
+.sidebar-links:hover{
+    color: black;
+}
+.sidebar-links:active{
+    color: black;
+}
 a:hover {
-    text-decoration: underline;
-    text-decoration-color: white;
+  background-color: white;
+  color: black;
+  
+}
+
+.link-text:hover {
+    color: black;
+}
+
+.link-text:active {
+    color: black;
 }
 
 .link-text {
-    color: white;
+    color: rgb(211, 210, 210);
     margin-top: 5px;
     font-size: 27px;
     margin-left: 0px;
@@ -79,7 +93,16 @@ a:hover {
     justify-content: space-between;
     padding-left: 20px;
     text-decoration: none;
+    font-size: 30px;
+    padding: 8px 8px 10px 35px;
+    margin: 3px 0px 3px 0px;
+    white-space: nowrap;
+    text-decoration: none;
+    text-align: right;    
+    border-radius: 10px 0px 0px 10px;
 }
+
+
 
 .sidebar-img {
     height: 27px;
@@ -89,6 +112,11 @@ a:hover {
 
 }
 
+.sidebar-links:hover {
+    background-color: white;
+    color: rgb(88, 88, 88);
+    right: -7px;
+}
 
 .logo {
     display: flex;
@@ -113,7 +141,11 @@ a:hover {
     height: 55px;
     width: 54px;
 }
-
+.active {
+    background-color: white !important;
+    color: black !important;
+    right: -7px !important;
+}
 
 .imprint {
 
