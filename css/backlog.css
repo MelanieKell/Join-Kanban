@@ -100,11 +100,28 @@ body {
     padding-left: 73px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    
 }
 
 .email {
     color: #6b8cfc;
 }
+
+.text-createTask {
+    font-weight: bold;
+    background-color: #3634C9;
+    color: white;
+    font-size: 19px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    height: 100%;
+    width: 29px;
+
+   
+}
+
 
 .members-list {
     display: flex;
