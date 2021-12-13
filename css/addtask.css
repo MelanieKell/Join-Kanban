@@ -19,7 +19,11 @@ td {
 .bold {
     font-weight: bold;
 }
-
+.active {
+    background-color: white !important;
+    color: black !important;
+    right: -7px !important;
+}
 .color {
     color:#3634C9;
 }

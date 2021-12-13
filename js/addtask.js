@@ -6,6 +6,7 @@ async function init() {
     loadAllTasks(); // all have to load again so that new can add up
     includeHTML();
     assignToMembers();
+    checkUrlShowOnNav()
 }
 
 /**
@@ -76,7 +77,9 @@ async function createTask() {
             'description': description,
             'assignment': assignment,
             'board': 'todo', //board bc category already used
-            'id' : new Date().getTime()
+            'id' : new Date().getTime(),
+            'status' : 'inactiv'
+
         };
     
         allTasks.push(task);
@@ -100,4 +103,9 @@ function deleteInformation() {
 
     selectedMembers = []; //array gets cleared for new ticket
     assignToMembers();
+}
+
+
+function showTaskinBoard() {
+    document.getElementById('showTaskinBoard').classList.add('display:flex')
 }

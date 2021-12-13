@@ -29,22 +29,22 @@ function includeHTML() {
 
 
 
-function showHover() {
-  if (window.location.href == 'http://gruppe-126.developerakademie.net/Join-Kanban/board.html') {
-      document.getElementById('link-board').classList.add('active')
+function checkUrlShowOnNav() {
+  if (window.location.href.endsWith('/board.html')) {
+    document.getElementById('link-board').classList.add('active')
   }
-  if (window.location.href == 'http://gruppe-126.developerakademie.net/Join-Kanban/backlog.html') {
+  if (window.location.href.endsWith('/backlog.html')) {
       document.getElementById('link-backlog').classList.add('active')
-  }
-  if (window.location.href == 'http://gruppe-126.developerakademie.net/Join-Kanban/addtask.html') {
-      document.getElementById('link-addtask').classList.add('active')
-  }
-  if (window.location.href == 'http://gruppe-126.developerakademie.net/Join-Kanban/help.html') {
-      document.getElementById('link-help').classList.add('active')
-  }
-}
-
-
+    }
+    if (window.location.href.endsWith('/addtask.html')) {
+        document.getElementById('link-addtask').classList.add('active')
+      }
+      if (window.location.href.endsWith('/help.html')) {
+        {
+          document.getElementById('link-help').classList.add('active')
+        }
+      }
+    }
 
 
 

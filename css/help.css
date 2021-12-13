@@ -16,6 +16,12 @@ h3 {
     padding: 20px 0px 5px 0px;
 }
 
+.active {
+    background-color: white !important;
+    color: black !important;
+    right: -7px !important;
+}
+
 .div-position {
     height: 100vh;
     padding: 30px 30px 0px 220px;

@@ -5,6 +5,7 @@ async function init() {
     loadAllTasks(); //necessary to use "allTasks"
     includeHTML();
     updateHTML();
+    checkUrlShowOnNav()
     canvasInfo = canvas.getBoundingClientRect();
 }
 
@@ -19,7 +20,7 @@ function updateHTML() {
     for (let i = 0; i < todo.length; i++) {
         const element = todo[i];
         document.getElementById('boardColumnToDo').innerHTML +=
-            `<div style="position: relative">
+            `<div id="taggingfromBacklog" style="position: relative">
                 <table draggable="true" ondragstart="startDragging(${element['id']})" id="taskBoard${i}" onclick="openPopup(${element['id']})" class="task-board">
                     <tr>
                         <td>Assigned to:</td>
