@@ -12,15 +12,16 @@
     <link rel="stylesheet" href="./css/sidebarcss.css">
     <link rel="stylesheet" href="./css/help.css">
     <!-- JS -->
-    <script src="./js/sidebar.js"></script>
+    <script src="./js/help.js"></script>
     <!-- Backend -->
     <script src="./js/mini_backend.js"></script>
     <script src="./js/script.js"></script> <!-- extra file for clarity -->
 </head>
 
-<body id="id-body" onload="includeHTML()">
+<body id="id-body" onload="includeHTML() , init()">
+    <script src="./js/sidebar.js"></script>
     <div w3-include-html="sidebar.html"></div>
-
+    
     <img onclick="sidebarFullscreen()" id="id-sidebarFullscreen" class="img-sidebarBtn"
         style="position: fixed; top: 0; right: 0" src="img/sidebarBtn.png">
 

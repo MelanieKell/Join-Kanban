@@ -1,3 +1,8 @@
+let inactiveTasks = [];
+
+
+
+
 /**
  * Fires the functions when side loads
  */
@@ -5,14 +10,13 @@ async function init() {
     await downloadFromServer();
     loadAllTasks();
     includeHTML();
-    showTasks();
     inactiveTasks = allTasks.filter(task => task.status === 'inactiv')
-    checkUrlShowOnNav()
+    showTasks();
+    setTimeout(()=> {checkUrlShowOnNav(); }, 50)
 
 }
 
 
-let inactiveTasks = [];
 
 
 
@@ -25,7 +29,7 @@ let inactiveTasks = [];
 function showTasks() {
     let taskRow = document.getElementById('taskRow');
     taskRow.innerHTML = '';
-    for (let i = 0; i < allTasks.length; i++) {
+    for (let i = 0; i < inactiveTasks.length; i++) {
 
         console.log('showsomething');
 
@@ -43,12 +47,12 @@ function showTasks() {
             
             <div class="details-history">
             
-            <p>${allTasks[i].description}</p>
+            <p>${inactiveTasks[i].description}</p>
             
-            <button id="showTaskinBoard" class="text-createTask" onclick="showTaskinBoard(${inactiveTaks[i].id})">+</button>
             </div>
-
-        </div>
+            
+            <button id="showTaskinBoard" class="text-createTask" onclick="showTaskinBoard(${inactiveTasks[i].id})">+</button>
+            </div>
         `;
         showMembers(i);
     }
@@ -59,10 +63,9 @@ function showTasks() {
 async function showTaskinBoard(taskID) {
     let task = allTasks.find(t=>t.id === taskID);
     task.status = 'active';
-    await backend.setItem('allTasks' , Json.stringify(allTasks))
-    
-    updateHTML()
+    await backend.setItem('allTasks' , JSON.stringify(inactiveTasks))
     alert('Task wurde zum Board geaddet');
+    
 }
 
 

@@ -104,7 +104,10 @@ body {
     justify-content: space-between;
     
 }
-
+.button-container{
+    display: flex;
+    align-items: flex-end;
+}
 .email {
     color: #6b8cfc;
 }
