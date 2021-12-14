@@ -4,14 +4,18 @@ async function init() {
     await downloadFromServer(); //necessary to use "allTasks"
     loadAllTasks(); //necessary to use "allTasks"
     includeHTML();
+    setTimeout(()=> {checkUrlShowOnNav(); }, 50) 
     updateHTML();
-    checkUrlShowOnNav()
     canvasInfo = canvas.getBoundingClientRect();
 }
 
 /**
  * Shows the tickets in the respective column 
  */
+
+
+
+
 function updateHTML() {
     //To do
     let todo = allTasks.filter(t => t['board'] == 'todo');
@@ -21,7 +25,7 @@ function updateHTML() {
         const element = todo[i];
         document.getElementById('boardColumnToDo').innerHTML +=
             `<div id="taggingfromBacklog" style="position: relative">
-                <table draggable="true" ondragstart="startDragging(${element['id']})" id="taskBoard${i}" onclick="openPopup(${element['id']})" class="task-board">
+                <table draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" onclick="openPopup(${element['id']})" class="task-board">
                     <tr>
                         <td>Assigned to:</td>
                         <td>${element.assignment[0].name}</td>

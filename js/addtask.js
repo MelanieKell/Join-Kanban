@@ -6,7 +6,8 @@ async function init() {
     loadAllTasks(); // all have to load again so that new can add up
     includeHTML();
     assignToMembers();
-    checkUrlShowOnNav()
+    setTimeout(()=> {checkUrlShowOnNav(); }, 500)
+
 }
 
 /**

@@ -47,7 +47,11 @@ td {
     cursor: pointer;
     border: none;
 }
-
+.active {
+    background-color: white !important;
+    color: black !important;
+    right: -7px !important;
+}
 .text-createTask:hover {
     opacity: 0.5;
 }
