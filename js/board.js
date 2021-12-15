@@ -12,13 +12,9 @@ async function init() {
 /**
  * Shows the tickets in the respective column 
  */
-
-
-
-
 function updateHTML() {
     //To do
-    let todo = allTasks.filter(t => t['board'] == 'todo');
+    let todo = allTasks.filter(t => t['board'] == 'todo' && t['status'] == 'active'); //allTask = array in script.js, active bc of backlog
     document.getElementById('boardColumnToDo').innerHTML = '';
 
     for (let i = 0; i < todo.length; i++) {
@@ -143,7 +139,7 @@ function allowDrop(ev) {
 }
 
 /**
- * The category of the tickets with the id of the current dragged element gets new category 
+ * Tickets with the id of the current dragged element gets new category 
  * @param {string} category - placeholder variable for toDo/inProgress/codeReview/done
  */
 async function moveTo(category) {

@@ -63,8 +63,9 @@ function showTasks() {
 async function showTaskinBoard(taskID) {
     let task = allTasks.find(t=>t.id === taskID);
     task.status = 'active';
-    await backend.setItem('allTasks' , JSON.stringify(inactiveTasks))
-    alert('Task wurde zum Board geaddet');
+    await saveToBackendTasks(); // necessary to keep changes
+    /* await backend.setItem('allTasks' , JSON.stringify(inactiveTasks)) */
+    alert('Task added to board!');
     
 }
 
