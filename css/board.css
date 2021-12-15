@@ -210,9 +210,9 @@ td {
 
 }
 
-.div-ticketsResponsive {
-
-}
+/* .div-ticketsResponsive {
+    
+} */
 
 @media (max-width: 600px) {
     .bg-board {
@@ -239,10 +239,15 @@ td {
         margin: 35px 30px 20px 0px;
     }
 
-    .div-ticketsResponsive {
+    .div-ticket {
+        height: 90%;
+        overflow-y: auto; 
+    }
+
+  /*   .div-ticketsResponsive {
         height: 90%;
         overflow-y: auto;
-    }
+    } */
 }
 
 @media (max-height: 425px) {
