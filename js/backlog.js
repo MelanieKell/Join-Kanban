@@ -47,7 +47,7 @@ function showTasks() {
             
             <div class="details-history">
             
-            <p>${inactiveTasks[i].description}</p>
+            <span>${inactiveTasks[i].description}</spany>
             
             </div>
             
@@ -84,7 +84,7 @@ function showMembers(taskIndex) {
         document.getElementById("members-list" + taskIndex).innerHTML += `
             <img class="member-pic" src="${allTasks[taskIndex].assignment[i].img}">
             <div class="user-data">
-            <span class="name-email">${allTasks[taskIndex].assignment[i].name}</p>
+            <span class="name-email">${allTasks[taskIndex].assignment[i].name}</span>
             <span class="email">${allTasks[taskIndex].assignment[i].email}
             </div>
           

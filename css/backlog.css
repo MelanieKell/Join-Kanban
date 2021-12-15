@@ -11,6 +11,11 @@ body {
     padding-top: 33px;
 }
 
+.overview {
+    display: flex;
+    flex-direction: column;
+}
+
 .title-backlog {
     height: 5px;
     font-size: 29px;
@@ -24,33 +29,13 @@ body {
     padding-left: 1px;
 }
 
-.details {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 25px;
-    width: 80%;
-}
-
-.detail {
-    font-size: 20px;
-    font-weight: 600;
-    color: #273a94;
-}
-
-/* .a1 {
-    padding-right: 323px;
-}
-
-.a2 {
-    padding-right: 450px;
-} */
 
 .history
 
 /* container for Historylog */
 /* id */
-    {
-    width: 95%;
+{
+    width: 100%;
     background-color: rgba(244, 243, 251, 255);
     height: 100px;
     display: flex;
@@ -58,60 +43,50 @@ body {
     border-left: 4px solid green;
     margin-bottom: 15px;
     overflow: hidden;
+    justify-content: space-between;
+}
+.details {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+    width: 80%;
+}
+.detail {
+    font-size: 20px;
+    font-weight: 600;
+    color: #273a94;
 }
 
-.member-pic {
-    /* Picture in Historylog */
-    /* id */
-
-
+.members-list {
+    display: flex;
+}
+.member-pic{
+    margin-top: 25px;
+    width: 50px;
     border-radius: 50px;
     height: 50px;
-    width: 50px;
-    margin-top: 24px;
-    margin-left: 15px;
+    margin-left: 5px;
 }
 
-
-.user-data {
-    display: flex;
-    flex-direction: column;
-    padding-left: 14px;
-    padding-top: 17px;
-
-}
-
-.name-email {
-    /* id */
-
-    width: 280px;
-    height: 1px;
-}
-
-.category {
-    /* id */
-   
-    padding-left: 70px;
-    width: 105px;
-    display: flex;
-    align-items: center;
-}
-
-.details-history {
-    /* id */
-    width: 520px;
-    padding-left: 73px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
-}
-.button-container{
-    display: flex;
-    align-items: flex-end;
-}
 .email {
     color: #6b8cfc;
+}
+.user-data{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+    margin-left: 24px;
+}
+
+.category{
+    display: flex;
+    align-items: center;
+}
+
+.details-history{    
+    display: flex;
+    align-items: center;
 }
 
 .text-createTask {
@@ -125,87 +100,41 @@ body {
     height: 100%;
     width: 29px;
 
-   
+
 }
-
-
-.members-list {
-    display: flex;
-}
-
 
 
 @media (max-width: 600px) {
-.taskRow{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-.side-bar{
-    display: none;
-}
 
 .backlog {
-    margin-left: 2px;
-}
-
-.title-backlog {
-    text-align: center;
-}
-
-.title-text {
-    text-align: center;
-}
-
-
-.history {
-    width: fit-content;
-
-}
-
-.active {
-    background-color: white !important;
-    color: black !important;
-    right: -7px !important;
-}
-.details {
     display: flex;
-    justify-content: space-around;
+    margin-left: 0%;
+    justify-content: center;
+    align-items: center;
+}
+.history{
+    position: relative;
+}
+.details{
+ width: 100%;
+}
+.overview {
+    width: 100%;
+}
+
+
+
+
+
+}
+
+@media (max-width: 400px){
+    .member-pic{
     
-}
-
-.category {
-    width: fit-content;
-    padding-left: 0px;
-    
-}
-
-.details-history {
-    width: 179px;
-    padding-left: 25px;
-}
-
-
-
-.user-data {
-    width: 150px;
-}
-
-.a1 {
-    padding-right: 0px;
-}
-.a2{
-    padding-right: 0px;
-}
-
-
-}
-
-
-/* @media (max-width: 1200px) {
-
-    .details-history{
-        width: 130px;
+        margin-left: -3px;
     }
-} */
+    .user-data{
+        margin-left: 0px;
+    }
+}
+
