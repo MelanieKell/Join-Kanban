@@ -30,7 +30,8 @@
 <body id="id-body" onload="init()">
     <div w3-include-html="sidebar.html"></div>
 
-    <img onclick="sidebarFullscreen()" id="id-sidebarFullscreen" class="img-sidebarBtn" style="position: fixed; top: 0; right: 0" src="img/sidebarBtn.png">
+    <img onclick="sidebarFullscreen()" id="id-sidebarFullscreen" class="img-sidebarBtn"
+        style="position: fixed; top: 0; right: 0" src="img/sidebarBtn.png">
 
     <div class="div-position">
         <div style="padding-bottom: 20px; display:flex; justify-content: space-between;">
@@ -40,7 +41,8 @@
             </div>
         </div>
         <div class="div-background">
-            <form onsubmit="createTask(); return false;"> <!-- when no "return false" the page refreshes after confirming the alert "Please select an assigne!" -->
+            <form onsubmit="createTask(); return false;">
+                <!-- when no "return false" the page refreshes after confirming the alert "Please select an assigne!" -->
                 <div class="div-flex">
                     <div class="div-column color div-flex">
                         <p class="color bold">TITLE</p>
@@ -49,7 +51,8 @@
                         <input id="id-date" required class="div-fillIns" type="date">
                         <p class="color bold">CATEGORY</p>
                         <select id="id-category" class="div-fillIns" required>
-                            <option hidden selected value="">Please select a category...</option> <!-- no hight in css -->
+                            <option hidden selected value="">Please select a category...</option>
+                            <!-- no hight in css -->
                             <option>Management</option>
                             <option>Marketing</option>
                             <option>Product</option>
@@ -63,12 +66,13 @@
                             <option>High</option>
                         </select>
                         <p class="color bold">DESCRIPTION</p>
-                        <textarea required id="id-description" class="div-description" placeholder="Please fill in..." cols="30" rows="5"></textarea>
+                        <textarea required id="id-description" class="div-description" placeholder="Please fill in..."
+                            cols="30" rows="5"></textarea>
                     </div>
                     <div class="div-padding">
                         <p class="color bold">ASSIGNED TO</p>
                         <table>
-                            <tbody class="div-tbody"id="id-assignment"></tbody>
+                            <tbody class="div-tbody" id="id-assignment"></tbody>
                         </table>
                     </div>
                 </div>

@@ -29,12 +29,12 @@
 
 <body onload="init()" style="display:flex; justify-content: center; align-items: center; height: 100vh">
     <div style="display:flex;flex-direction: column; justify-content: center; align-items: center;">
-        <div style="display:flex;flex-direction:column; text-align: center; align-items: center; margin-bottom: 30px;">
+        <div class="div-text">
             <b style="font-size: 25px;padding:10px">Kanban Board</b>
             <p style="font-size: 17.5px;">Created by three developers during a group project of Developer Akademie</p>
         </div>
         <div class="div-background">
-            <img style="margin-bottom: 50px;" src="./img/logo.png">
+            <img class="img-logo" src="./img/logo.png">
             <div id="id-formLogin">
                 <form class="div-column" onsubmit="login(); return false">
                     <input id="id-email" class="div-input" required placeholder="Email" type="email">
