@@ -37,11 +37,14 @@ function checkUrlShowOnNav() {
     document.getElementById('link-addtask').classList.add('active')
   }
   if (window.location.href.endsWith('/help.html')) {
-    {
-      document.getElementById('link-help').classList.add('active')
+    document.getElementById('link-help').classList.add('active')
     }
+    if (window.location.href.endsWith('/imprint.html')) {
+      document.getElementById('link-imprint').classList.add('active')
+    }
+    
   }
-}
+
 
 /**
  * Shows sidebar fullscreen

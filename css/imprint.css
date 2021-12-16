@@ -17,6 +17,12 @@ h2 {
     padding: 30px 30px 30px 220px;
 }
 
+.active {
+    background-color: white !important;
+    color: black !important;
+    right: -7px !important;
+}
+
 @media (max-width: 600px) {
     .div-position {
         padding: 30px 30px 30px 30px;

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./css/imprint.css">
     <!-- JS -->
     <script src="./js/sidebar.js"></script>
+    <script src="./js/imprint.js"></script>
     <!-- FONT 'PT SANS' -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +22,7 @@
         rel="stylesheet">
 </head>
 
-<body id="id-body" onload="includeHTML()">
+<body id="id-body" onload="includeHTML(), init()">
     <div w3-include-html="sidebar.html"></div>
 
     <img onclick="sidebarFullscreen()" id="id-sidebarFullscreen" class="img-sidebarBtn"
