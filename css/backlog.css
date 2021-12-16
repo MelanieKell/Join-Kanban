@@ -35,7 +35,7 @@ body {
 /* container for Historylog */
 /* id */
 {
-    width: 100%;
+    width: 80%;
     background-color: rgba(244, 243, 251, 255);
     height: 100px;
     display: flex;
@@ -105,7 +105,9 @@ body {
 
 
 @media (max-width: 600px) {
-
+.history{
+    width: 100%;
+}
 .backlog {
     display: flex;
     margin-left: 0%;
