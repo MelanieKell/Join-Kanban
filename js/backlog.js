@@ -47,7 +47,7 @@ function showTasks() {
             
             <div class="details-history">
             
-            <span>${inactiveTasks[i].description}</spany>
+            <span class="break">${inactiveTasks[i].description}</span>
             
             </div>
             

@@ -123,6 +123,9 @@ body {
 .overview {
     width: 100%;
 }
+.break{
+    word-break: break-all;
+}
 
 
 
