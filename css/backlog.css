@@ -190,6 +190,7 @@ body {
 
     .responsiv-details {
         display: flex;
+        padding-bottom: 5px;
     }
     
 
