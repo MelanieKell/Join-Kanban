@@ -4,7 +4,7 @@ async function init() {
     await downloadFromServer(); //necessary to use "allTasks"
     loadAllTasks(); //necessary to use "allTasks"
     includeHTML();
-    setTimeout(()=> {checkUrlShowOnNav(); }, 50) 
+    setTimeout(() => { checkUrlShowOnNav(); }, 50)
     updateHTML();
     canvasInfo = canvas.getBoundingClientRect();
 }
@@ -23,16 +23,16 @@ function updateHTML() {
             `<div id="taggingfromBacklog" style="position: relative">
                 <table draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" onclick="openPopup(${element['id']})" class="task-board">
                     <tr>
-                        <td>Assigned to:</td>
-                        <td>${element.assignment[0].name}</td>
+                        <td>Title:</td>
+                        <td>${element.title}</td>
                     </tr>
                     <tr>
                         <td>Due to:</td>
                         <td>${element.date}</td>
                     </tr>
                     <tr>
-                        <td>Title:</td>
-                        <td>${element.title}</td>
+                        <td>Assigned to:</td>
+                        <td>${element.assignment[0].name}</td>
                     </tr> 
                 </table>
                 <div class="delete-button" onclick="deleteTask(${element.id})">x</div>
@@ -50,16 +50,17 @@ function updateHTML() {
             `<div style="position:relative">
                 <table draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" onclick="openPopup(${element['id']})" class="task-board"> 
                     <tr>
-                        <td>Assigned to:</td>
-                        <td>${element.assignment[0].name}</td>
+                        <td>Title:</td>
+                        <td>${element.title}</td>
+                        
                     </tr>
                     <tr>
                         <td>Due to:</td>
                         <td>${element.date}</td>
                     </tr>
                     <tr>
-                        <td>Title:</td>
-                        <td>${element.title}</td>
+                        <td>Assigned to:</td>
+                        <td>${element.assignment[0].name}</td>
                     </tr>
                 </table>
                 <div class="delete-button" onclick="deleteTask(${element.id})">x</div>
@@ -77,16 +78,17 @@ function updateHTML() {
             `<div style="position:relative">
                 <table draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" onclick="openPopup(${element['id']})" class="task-board"> 
                     <tr>
-                        <td>Assigned to:</td>
-                        <td>${element.assignment[0].name}</td>
+                        <td>Title:</td>
+                        <td>${element.title}</td>
+                        
                     </tr>
                     <tr>
                         <td>Due to:</td>
                         <td>${element.date}</td>
                     </tr>
                     <tr>
-                        <td>Title:</td>
-                        <td>${element.title}</td>
+                        <td>Assigned to:</td>
+                        <td>${element.assignment[0].name}</td>
                     </tr>
                 </table>
                 <div class="delete-button" onclick="deleteTask(${element.id})">x</div>
@@ -101,19 +103,19 @@ function updateHTML() {
     for (let i = 0; i < done.length; i++) {
         const element = done[i];
         document.getElementById('boardColumnDone').innerHTML +=
-        `<div style="position:relative">
+            `<div style="position:relative">
             <table draggable="true" ondragstart="startDragging(${element['id']})" id="${i}" onclick="openPopup(${element['id']})" class="task-board"> 
                 <tr>
-                    <td>Assigned to:</td>
-                    <td>${element.assignment[0].name}</td>
+                    <td>Title:</td>
+                    <td>${element.title}</td> 
                 </tr>
                 <tr>
                     <td>Due to:</td>
                     <td>${element.date}</td>
                 </tr>
                 <tr>
-                    <td>Title:</td>
-                    <td>${element.title}</td>
+                    <td>Assigned to:</td>
+                    <td>${element.assignment[0].name}</td>
                 </tr>
             </table>
             <div class="delete-button" onclick="deleteTask(${element.id})">x</div>
