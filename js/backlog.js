@@ -41,12 +41,12 @@ function showTasks() {
             
             <div class="category">
             
-            <p class="category1">${inactiveTasks[i].category}</p>
+            <b class="responsiv-category">Category:</b><p class="category1">${inactiveTasks[i].category}</p>
             
             </div>
             
             <div class="details-history">
-            
+            <b class="responsiv-details">Details:</b>
             <span class="break">${inactiveTasks[i].description}</span>
             
             </div>

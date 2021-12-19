@@ -101,7 +101,9 @@ a:hover {
     margin-left: 0px;
     font-family: 'Open Sans', sans-serif;
 }
-
+.responsiv-category{
+    display: none;
+}
 .sidebar-links {
     margin-top: 5px;
     display: flex;
